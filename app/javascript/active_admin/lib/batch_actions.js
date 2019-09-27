@@ -1,3 +1,5 @@
+import ActiveAdmin from './active_admin';
+
 const onDOMReady = function() {
   // Detach any previously attached handlers before re-attaching them.
   // This avoids double-registered handlers when Turbolinks is enabled
@@ -45,7 +47,7 @@ const onDOMReady = function() {
     }
 
     $(document).on('change', '.paginated_collection :checkbox', function() {
-      if ($(".paginated_collection :checkbox:checked").length) {
+      if ($(".paginated_collection :checkbox:checked").length && $(".dropdown_menu_list").children().length) {
         $(".batch_actions_selector").each(function() { $(this).aaDropdownMenu("enable"); });
       } else {
         $(".batch_actions_selector").each(function() { $(this).aaDropdownMenu("disable"); });

@@ -1,3 +1,5 @@
+import ActiveAdmin from './active_admin';
+
 ActiveAdmin.modal_dialog = function(message, inputs, callback){
   let html = `<form id="dialog_confirm" title="${message}"><ul>`;
   for (let name in inputs) {
@@ -20,7 +22,7 @@ ActiveAdmin.modal_dialog = function(message, inputs, callback){
         (opts ? ((() => {
           const result = [];
 
-          for (let v of opts) {
+          opts.forEach(v => {
             const $elem = $(`<${elem}/>`);
             if ($.isArray(v)) {
               $elem.text(v[0]).val(v[1]);
@@ -28,7 +30,7 @@ ActiveAdmin.modal_dialog = function(message, inputs, callback){
               $elem.text(v);
             }
             result.push($elem.wrap('<div>').parent().html());
-          }
+          });
 
           return result;
         })()).join('') : '') +
