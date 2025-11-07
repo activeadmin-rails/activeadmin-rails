@@ -2,9 +2,9 @@
 $secondary-gradient-start: #efefef !default;
 $secondary-gradient-stop: #dfe1e2 !default;
 
-@mixin gradient($start, $end){
+@mixin gradient($start, $end, $direction: 180deg){
   background-color: $start;
-  background-image: linear-gradient(180deg, $start, $end);
+  background-image: linear-gradient($direction, $start, $end);
 }
 
 @mixin primary-gradient {
