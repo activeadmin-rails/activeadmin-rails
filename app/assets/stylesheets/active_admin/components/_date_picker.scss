@@ -90,7 +90,7 @@
   }
 
   table.ui-datepicker-calendar {
-    @include rounded-bottom;
+    border-radius: 0 0 3px 3px;
     @include shadow(0,1px,6px,rgba(0,0,0,0.26));
     background-color: #f4f4f4;
     border: solid 1px #63686e;
@@ -122,7 +122,7 @@
         width: 22px;
 
         a {
-          @include rounded;
+          border-radius: 3px;
           color: #666666;
           font-weight: bold;
           font-size: 0.85em;

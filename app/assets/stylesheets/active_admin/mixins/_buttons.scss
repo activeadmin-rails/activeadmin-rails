@@ -1,6 +1,6 @@
 @use "sass:color";
 @mixin basic-button {
-  @include rounded(200px);
+  border-radius: 200px;
   display: inline-block;
   font-weight: bold;
   font-size: 1.0em;
