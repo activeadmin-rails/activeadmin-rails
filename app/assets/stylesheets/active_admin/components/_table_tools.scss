@@ -1,10 +1,8 @@
 .table_tools {
   margin-bottom: 16px;
-  @include clearfix;
-}
-
-.table_tools .dropdown_menu {
-  float: left;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 a.table_tools_button, .table_tools .dropdown_menu_button {
@@ -35,10 +33,9 @@ a.table_tools_button, .table_tools .dropdown_menu_button {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  display: flex;
 
   li {
-    float: left;
-
     a {
       border-width: 1px .5px 1px .5px;
       border-radius: 0;

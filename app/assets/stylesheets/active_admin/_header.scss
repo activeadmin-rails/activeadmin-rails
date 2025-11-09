@@ -5,8 +5,9 @@
   @include primary-gradient;
   @include shadow;
   @include text-shadow(#000);
-  display: table;
-  height: 20px;
+  display: flex;
+  align-items: center;
+  min-height: 20px;
   width: 100%;
   overflow: visible;
   position: inherit;
@@ -14,13 +15,13 @@
   z-index: 900;
 
   h1 {
-    display: table-cell;
-    vertical-align: middle;
+    flex-shrink: 0;
     white-space: nowrap;
     color:  $page-header-text-color;
     margin-right: 20px;
-    margin-bottom: 0px;
-    padding: 3px $horizontal-page-margin 0 $horizontal-page-margin;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 1.5px $horizontal-page-margin 1.5px $horizontal-page-margin;
     font-size: 1.3em;
     font-weight: normal;
     line-height: 1.2;
@@ -47,9 +48,9 @@
     height: 20px
   }
 
-  ul.tabs {
-    display: table-cell;
-    vertical-align: middle;
+  .tabs {
+    display: flex;
+    align-items: center;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -133,14 +134,16 @@
   }
 
   #tabs {
-    width: 100%;
+    flex: 1;
   }
 
   #utility_nav {
     color: #aaa;
-    display: table-cell;
+    flex-shrink: 0;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
     white-space: nowrap;
-    margin: 0;
     padding: 0;
     padding-right: 26px;
     text-align: right;
