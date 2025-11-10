@@ -5,7 +5,7 @@ body.logged_out {
     width: 500px;
     margin: 70px auto;
     #active_admin_content {
-      @include shadow;
+      box-shadow: $shadow-md;
       background: #fff;
       padding: 13px 30px;
     }
@@ -14,7 +14,7 @@ body.logged_out {
   h2 {
     @include section-header;
     @include primary-gradient;
-    @include text-shadow(#000);
+  text-shadow: $text-shadow-dark;
     box-shadow: 0 1px 3px rgba(0,0,0,0.3);
     border: none;
     color: #fff;
@@ -26,7 +26,7 @@ body.logged_out {
     flex-direction: column;
     form {
       fieldset {
-        @include no-shadow;
+        box-shadow: $shadow-none;
         background: none;
         padding: 0;
         margin-bottom: 0;
