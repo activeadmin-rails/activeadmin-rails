@@ -2,7 +2,7 @@
   @include secondary-gradient;
   text-shadow: $text-shadow-light;
   border: solid 1px #cdcdcd;
-  @include border-colors(#e6e6e6, #d4d4d4, #cdcdcd);
+  border-color: #e6e6e6 #d4d4d4 #cdcdcd #d4d4d4;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 0 1px #FFF inset;
 
   font-size: 1em;

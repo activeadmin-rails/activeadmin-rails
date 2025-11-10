@@ -23,7 +23,7 @@
   text-shadow: $text-shadow-dark;
   box-shadow: 0 1px 1px rgba(0,0,0,0.10), 0 1px 0 0px rgba(255,255,255, 0.2) inset;
   border: solid 1px #484e53;
-  @include border-colors(#616a71, #484e53, #363b3f);
+  border-color: #616a71 #484e53 #363b3f #484e53;
   color: #efefef;
   @include basic-button;
 
@@ -46,7 +46,7 @@
   background-image: linear-gradient(180deg, #FFFFFF, #E7E7E7);
   box-shadow: 0 1px 1px rgba(0,0,0,0.10), 0 1px 0 0 rgba(255,255,255, 0.8) inset;
   border: solid 1px #c7c7c7;
-  @include border-colors(#d3d3d3, #c7c7c7, #c2c2c2);
+  border-color: #d3d3d3 #c7c7c7 #c2c2c2 #c7c7c7;
   text-shadow: $text-shadow-light;
   color: $primary-color;
   @include basic-button;
@@ -59,7 +59,7 @@
 
     &:active {
       box-shadow: 0 1px 2px rgba(0,0,0,0.22) inset, 0 1px 0 0px #EEE;
-      @include border-colors(#c2c2c2, #b9b9b9, #b7b7b7);
+      border-color: #c2c2c2 #b9b9b9 #b7b7b7 #b9b9b9;
       background-color: #F3F3F3;
       background-image: linear-gradient(180deg, #F3F3F3, #D8D8D8);
     }
