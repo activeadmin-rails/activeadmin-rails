@@ -4,7 +4,7 @@
   display: inline-block;
   font-weight: bold;
   font-size: 1.0em;
-  @include sans-family;
+  font-family: $font-family-sans;
   line-height: 12px;
   margin-right: 3px;
   padding: 7px 16px 6px;

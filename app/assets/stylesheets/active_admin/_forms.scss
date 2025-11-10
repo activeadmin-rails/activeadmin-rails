@@ -132,7 +132,7 @@ form {
     border: $border-width solid #c9d0d6;
     border-radius: 3px;
     font-size: 0.95em;
-    @include sans-family;
+    font-family: $font-family-sans;
     outline: none;
     padding: 8px $text-input-horizontal-padding 7px;
 
