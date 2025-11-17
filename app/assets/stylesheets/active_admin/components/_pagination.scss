@@ -1,11 +1,10 @@
-.paginated_collection_contents {
-  clear: both;
-}
-
 .pagination {
-  float: right;
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
   font-size: 0.9em;
-  margin-left: 10px;
+  margin-left: 8px;
+  order: 2;
 
   a {
     @include light-button;
@@ -17,42 +16,47 @@
 
   a, span.page.current {
     @include rounded(0px);
-    margin-right: 4px;
     padding: 2px 5px;
   }
 }
 
 .pagination_information {
-  float: right;
+  display: inline-block;
+  margin-left: auto;
   margin-bottom: 5px;
+  white-space: nowrap;
   color: #b3bcc1;
+  order: 1;
   b { color: #5c6469; }
 }
 
 .download_links {
-  float: left;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 0;
+  margin-right: auto;
+  order: 0;
 }
 
 .pagination_per_page {
-  float: right;
+  display: flex;
+  justify-content: flex-end;
   margin-left: 4px;
+  order: 0;
   select {
     @include light-button;
-
-    & {
-      @include rounded(0px);
-      padding: 1px 5px;
-    }
+    @include rounded(0px);
+    padding: 1px 5px;
   }
 }
 
 .comments {
   .pagination {
-    float: left;
+    justify-content: flex-start;
     margin-bottom: 30px;
   }
   .pagination_information {
-    float: left;
+    text-align: left;
     color: #000;
   }
 }

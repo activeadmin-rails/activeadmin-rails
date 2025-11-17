@@ -1,13 +1,3 @@
-@mixin clearfix {
-  &:after {
-    visibility: hidden;
-    display: block;
-    content: "";
-    clear: both;
-    height: 0;
-  }
-}
-
 @mixin border-colors($top, $sides, $bottom) {
   border-color: $sides;
   border-top-color: $top;

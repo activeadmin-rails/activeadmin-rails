@@ -22,7 +22,8 @@ body.logged_out {
   }
 
   #login {
-    /* Login Form */
+    display: flex;
+    flex-direction: column;
     form {
       fieldset {
         @include no-shadow;
@@ -38,7 +39,10 @@ body.logged_out {
       }
     }
 
-    a { float: right; margin-top: -32px; }
+    a {
+      align-self: flex-end;
+      margin-top: -32px;
+    }
   }
 
 }

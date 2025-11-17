@@ -1,21 +1,28 @@
 #title_bar {
   @include section-header;
-  @include clearfix;
   box-sizing: border-box;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
-  display: table;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border-bottom-color: #EEE;
   width: 100%;
   position: relative;
   margin: 0;
   padding: 10px $horizontal-page-margin;
-  z-index: 800;
-  @include clearfix;
+  z-index: 1000;
 
   #titlebar_left, #titlebar_right {
-    height: 50px;
-    vertical-align: middle;
-    display: table-cell;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+  }
+
+  #titlebar_left {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3px;
   }
 
   #titlebar_right {
