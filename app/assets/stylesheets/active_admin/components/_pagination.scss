@@ -15,7 +15,7 @@
   }
 
   a, span.page.current {
-    @include rounded(0px);
+    border-radius: 0;
     padding: 2px 5px;
   }
 }
@@ -45,7 +45,7 @@
   order: 0;
   select {
     @include light-button;
-    @include rounded(0px);
+    border-radius: 0;
     padding: 1px 5px;
   }
 }

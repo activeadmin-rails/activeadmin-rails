@@ -3,8 +3,8 @@
 // ----------------------------------- Header
 #header {
   @include primary-gradient;
-  @include shadow;
-  @include text-shadow(#000);
+  box-shadow: $shadow-md;
+  text-shadow: $text-shadow-dark;
   display: flex;
   align-items: center;
   min-height: 20px;
@@ -67,7 +67,7 @@
         text-decoration: none;
         padding: 6px 10px 4px 10px;
         position: relative;
-        @include rounded(10px);
+        border-radius: 10px;
       }
 
       &.current > a {
@@ -91,7 +91,7 @@
       }
 
       &.has_nested:hover > a {
-        @include rounded-top(10px);
+        border-radius: 10px 10px 0 0;
         border-bottom: 5px solid $hover-menu-item-background;
         background: $hover-menu-item-background image-url('active_admin/nested_menu_arrow_dark.gif') no-repeat calc(100% - 7px) 50%;
         z-index: 1020;
@@ -103,8 +103,8 @@
       /* Drop down menus */
       ul {
         background: $hover-menu-item-background;
-        @include rounded-all(0,10px,10px,10px);
-        @include shadow(0, 1px, 3px, #444);
+        border-radius: 0 10px 10px 10px;
+        box-shadow: 0 1px 3px #444;
         position: absolute;
         width: 120%;
         min-width: 175px;
@@ -125,7 +125,7 @@
           }
 
           &.current {
-            a { @include rounded(0) }
+            a { border-radius: 0; }
           }
         }
       }

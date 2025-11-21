@@ -31,7 +31,7 @@
 
       & {
         @include gradient(#FFFFFF, #F0F0F0);
-        @include border-colors(#d9d9d9, #d0d0d0, #c5c5c5);
+        border-color: #d9d9d9 #d0d0d0 #c5c5c5 #d0d0d0;
         text-decoration: none;
         border-radius: 0;
         border-width: 1px .5px 1px .5px;

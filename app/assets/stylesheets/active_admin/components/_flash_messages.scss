@@ -1,7 +1,7 @@
 body.logged_in {
   .flash {
     @include gradient(#f7f1d3, #f5edc5);
-    @include text-shadow(#fafafa);
+    text-shadow: 0 1px 0 #fafafa;
     border-bottom: 1px solid #eee098;
     color: #cb9810;
     font-weight: bold;
@@ -25,8 +25,8 @@ body.logged_in {
 
 body.logged_out {
   .flash {
-    @include no-shadow;
-    @include text-shadow(#fff);
+    box-shadow: $shadow-none;
+    text-shadow: $text-shadow-light;
     background: none;
     color: #666;
     font-weight: bold;

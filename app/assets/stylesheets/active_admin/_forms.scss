@@ -130,15 +130,15 @@ form {
   textarea {
     width: calc(80% - #{$text-input-total-padding});
     border: $border-width solid #c9d0d6;
-    @include rounded;
+    border-radius: 3px;
     font-size: 0.95em;
-    @include sans-family;
+    font-family: $font-family-sans;
     outline: none;
     padding: 8px $text-input-horizontal-padding 7px;
 
     &:focus {
       border: $border-width solid #99a2aa;
-      @include shadow(0,0,4px,#99a2aa);
+      box-shadow: 0 0 4px #99a2aa;
     }
   }
 
@@ -221,7 +221,7 @@ form {
   /* semantic_errors */
   ul.errors {
     background: color.adjust($error-color, $lightness: 60%);
-    @include rounded(4px);
+    border-radius: 4px;
     color: $error-color;
     font-weight: bold;
     margin-bottom: 10px;
