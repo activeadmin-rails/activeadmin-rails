@@ -35,5 +35,4 @@ Gem::Specification.new do |s|
   s.add_dependency 'railties', '>= 5.0'
   s.add_dependency 'ransack', '>= 1.8.7'
   s.add_dependency 'dartsass-sprockets'
-  s.add_dependency 'sprockets-es6', '>= 0.9.2'
 end
