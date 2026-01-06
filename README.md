@@ -43,6 +43,16 @@ Google Groups, IRC #activeadmin and Gitter are not actively monitored.
 The [contributing guide][contributing]
 is a good place to start. If you have questions, feel free to ask.
 
+## Development
+
+To rebuild CSS after changing SCSS files:
+
+    npm run build:css
+
+To rebuild all assets (JS and CSS):
+
+    npm run build:all
+
 ## Dependencies
 
 We try not to reinvent the wheel, so Active Admin is built with other open source projects:
