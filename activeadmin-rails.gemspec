@@ -32,5 +32,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'kaminari', '>= 1.0.1'
   s.add_dependency 'railties', '>= 5.0'
   s.add_dependency 'ransack', '>= 1.8.7'
-  s.add_dependency 'dartsass-sprockets'
+  s.add_dependency 'dartsass-rails'
 end
