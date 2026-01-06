@@ -1,6 +1,12 @@
 # Rails template to build the sample app for specs
 
-copy_file File.expand_path('../templates/manifest.js', __FILE__), 'app/assets/config/manifest.js', force: true
+# For Rails 8+, remove Sprockets-specific initializer (uses Propshaft instead)
+# For Rails 7 and below, create Sprockets manifest.js
+if Rails.gem_version >= Gem::Version.new('8.0')
+  remove_file 'config/initializers/assets.rb'
+else
+  copy_file File.expand_path('../templates/manifest.js', __FILE__), 'app/assets/config/manifest.js', force: true
+end
 
 create_file 'app/assets/stylesheets/some-random-css.css'
 create_file 'app/assets/javascripts/some-random-js.js'
@@ -158,7 +164,7 @@ gsub_file 'config/environments/test.rb', /  config.(cache_classes|enable_reloadi
 
   config.cache_classes = !ENV['CLASS_RELOADING']
   config.action_mailer.default_url_options = {host: 'example.com'}
-  config.assets.precompile += %w( some-random-css.css some-random-js.js a/favicon.ico )
+  #{'config.assets.precompile += %w( some-random-css.css some-random-js.js a/favicon.ico )' if Rails.gem_version < Gem::Version.new('8.0')}
 
   config.active_record.maintain_test_schema = false
 
