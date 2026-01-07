@@ -79,6 +79,11 @@ module ActiveAdmin
     delegate :load!,         to: :application
     delegate :routes,        to: :application
 
+    # Returns the root path of the ActiveAdmin gem
+    def root
+      @root ||= Pathname.new(File.expand_path('..', __dir__))
+    end
+
     # A callback is triggered each time (before) Active Admin loads the configuration files.
     # In development mode, this will happen whenever the user changes files. In production
     # it only happens on boot.
