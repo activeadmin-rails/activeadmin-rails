@@ -19,7 +19,10 @@ export default {
   output: {
     file: "app/assets/javascripts/active_admin/base.js",
     format: "umd",
-    name: "ActiveAdmin"
+    name: "ActiveAdmin",
+    globals: {
+      'jquery': '$'
+    }
   },
   plugins: [
     resolve(),
