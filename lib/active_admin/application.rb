@@ -187,7 +187,17 @@ module ActiveAdmin
       register_stylesheet 'active_admin.css',       media: 'screen'
       register_stylesheet 'active_admin/print.css', media: 'print'
 
-      register_javascript 'active_admin.js'
+      if defined?(Sprockets)
+        # With Sprockets, jQuery is loaded via //= require directives in base.js
+        # The app's active_admin.js uses //= require active_admin/base
+        register_javascript 'active_admin.js'
+      else
+        # With Propshaft, load jQuery/jQuery-UI from CDN (gem assets use Sprockets directives)
+        # and load base.js directly (app's active_admin.js only has Sprockets directives)
+        register_javascript 'https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js'
+        register_javascript 'https://cdn.jsdelivr.net/npm/jquery-ui-dist@1/jquery-ui.min.js'
+        register_javascript 'active_admin/base.js'
+      end
     end
 
     # Since app/admin is alphabetically before app/models, we have to remove it
