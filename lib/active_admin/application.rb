@@ -190,7 +190,12 @@ module ActiveAdmin
       register_javascript 'https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js'
       register_javascript 'https://cdn.jsdelivr.net/npm/jquery-ui-dist@1/jquery-ui.min.js'
       register_javascript 'https://cdn.jsdelivr.net/npm/jquery-ujs@1.2.3/src/rails.min.js'
-      register_javascript 'active_admin.js'
+
+      if defined?(Sprockets)
+        register_javascript 'active_admin.js'
+      else
+        register_javascript 'active_admin/base.js'
+      end
     end
 
     # Since app/admin is alphabetically before app/models, we have to remove it
