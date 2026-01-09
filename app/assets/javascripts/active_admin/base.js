@@ -1,11 +1,3 @@
-//= require jquery3
-//= require jquery-ui/widgets/datepicker
-//= require jquery-ui/widgets/dialog
-//= require jquery-ui/widgets/sortable
-//= require jquery-ui/widgets/tabs
-//= require jquery-ui/widget
-//= require jquery_ujs
-//= require_self
 (function(global, factory) {
   typeof exports === "object" && typeof module !== "undefined" ? factory(exports, require("jquery"), require("jquery-ui/ui/widgets/datepicker"), require("jquery-ui/ui/widgets/dialog"), require("jquery-ui/ui/widgets/sortable"), require("jquery-ui/ui/widgets/tabs"), require("jquery-ui/ui/widget"), require("jquery-ujs")) : typeof define === "function" && define.amd ? define([ "exports", "jquery", "jquery-ui/ui/widgets/datepicker", "jquery-ui/ui/widgets/dialog", "jquery-ui/ui/widgets/sortable", "jquery-ui/ui/widgets/tabs", "jquery-ui/ui/widget", "jquery-ujs" ], factory) : (global = global || self, 
   factory(global.ActiveAdmin = {}));
