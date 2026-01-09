@@ -187,7 +187,9 @@ module ActiveAdmin
       register_stylesheet 'active_admin.css',       media: 'screen'
       register_stylesheet 'active_admin/print.css', media: 'print'
 
-      register_javascript 'active_admin.js'
+      register_javascript 'https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js'
+      register_javascript 'https://cdn.jsdelivr.net/npm/jquery-ui-dist@1/jquery-ui.min.js'
+      register_javascript 'active_admin/base.js'
     end
 
     # Since app/admin is alphabetically before app/models, we have to remove it

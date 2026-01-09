@@ -8,8 +8,6 @@ require 'formtastic'
 require 'formtastic_i18n'
 require 'dartsass-sprockets'
 require 'inherited_resources'
-require 'jquery-rails'
-require 'jquery-ui-rails'
 require 'arbo'
 
 require 'active_admin/helpers/i18n'
