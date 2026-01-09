@@ -12,6 +12,7 @@ gem 'rack', '>= 2.2'
 gem 'bootsnap'
 gem 'draper'
 gem 'propshaft'
+gem 'dartsass-rails'
 gem 'sqlite3', '>= 2.x'
 gem 'activerecord-jdbcsqlite3-adapter', '>= 70.0.x', platform: :jruby
 
