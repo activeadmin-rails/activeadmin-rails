@@ -1,6 +1,15 @@
 # Rails template to build the sample app for specs
 
-copy_file File.expand_path('../templates/manifest.js', __FILE__), 'app/assets/config/manifest.js', force: true
+# For Rails 8+, remove Sprockets-specific initializer (uses Propshaft instead)
+# For Rails 7 and below, create Sprockets manifest.js
+if Rails.gem_version >= Gem::Version.new('8.0')
+  copy_file File.expand_path('../templates/dartsass.rb', __FILE__), 'config/initializers/dartsass.rb', force: true
+  empty_directory 'app/assets/builds'
+  empty_directory 'app/assets/builds/active_admin'
+  create_file 'app/assets/builds/active_admin/.keep'
+else
+  copy_file File.expand_path('../templates/manifest.js', __FILE__), 'app/assets/config/manifest.js', force: true
+end
 
 create_file 'app/assets/stylesheets/some-random-css.css'
 create_file 'app/assets/javascripts/some-random-js.js'
@@ -181,6 +190,12 @@ run 'bundle install'
 
 # Setup Active Admin
 generate 'active_admin:install'
+
+# For Rails 8+, compile CSS with dartsass after Active Admin is installed
+if Rails.gem_version >= Gem::Version.new('8.0')
+  create_file 'app/assets/stylesheets/active_admin/print.scss', '@import "active_admin/print";'
+  rails_command 'dartsass:build'
+end
 
 # Force strong parameters to raise exceptions
 inject_into_file 'config/application.rb', after: 'class Application < Rails::Application' do
