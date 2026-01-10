@@ -1,9 +1,14 @@
+desc "Build JavaScript assets with Rollup"
+task :build_js do
+  system "npm run build"
+end
+
 desc "Run the full suite using 1 core"
-task test: [:spec, :cucumber]
+task test: [:build_js, :spec, :cucumber]
 
 require 'rspec/core/rake_task'
 
-RSpec::Core::RakeTask.new(:spec)
+RSpec::Core::RakeTask.new(:spec => :build_js)
 
 require 'cucumber/rake/task'
 
