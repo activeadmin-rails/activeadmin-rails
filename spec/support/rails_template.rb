@@ -1,6 +1,22 @@
 # Rails template to build the sample app for specs
 
-copy_file File.expand_path('../templates/manifest.js', __FILE__), 'app/assets/config/manifest.js', force: true
+# Detect asset pipeline by checking which gems are in the bundle
+# We can't use defined?(Sprockets) because gems aren't loaded during template execution
+def sprockets?
+  gemfile_content = File.read(ENV['BUNDLE_GEMFILE'] || 'Gemfile')
+  gemfile_content.match?(/gem ['"].*sprockets/)
+end
+
+# Sprockets vs Propshaft setup
+if sprockets?
+  copy_file File.expand_path('../templates/manifest.js', __FILE__), 'app/assets/config/manifest.js', force: true
+else
+  # Propshaft setup for dartsass
+  copy_file File.expand_path('../templates/dartsass.rb', __FILE__), 'config/initializers/dartsass.rb', force: true
+  empty_directory 'app/assets/builds'
+  empty_directory 'app/assets/builds/active_admin'
+  create_file 'app/assets/builds/active_admin/.keep'
+end
 
 create_file 'app/assets/stylesheets/some-random-css.css'
 create_file 'app/assets/javascripts/some-random-js.js'
@@ -181,6 +197,12 @@ run 'bundle install'
 
 # Setup Active Admin
 generate 'active_admin:install'
+
+# For Propshaft (no Sprockets), compile CSS with dartsass after Active Admin is installed
+unless sprockets?
+  create_file 'app/assets/stylesheets/active_admin/print.scss', '@import "active_admin/print";'
+  rails_command 'dartsass:build'
+end
 
 # Force strong parameters to raise exceptions
 inject_into_file 'config/application.rb', after: 'class Application < Rails::Application' do
