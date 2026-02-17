@@ -21,6 +21,7 @@ task :setup, [:parallel, :dir, :template] do |_t, opts|
     )
     args << "--skip-turbolinks" unless ENV['BUNDLE_GEMFILE'] =~ /turbolinks/
     args << "--skip-hotwire" unless ENV['BUNDLE_GEMFILE'] =~ /hotwire/
+    args << "--javascript=rollup"
 
     command = ['bundle', 'exec', 'rails', 'new', app_dir, *args].join(' ')
 
