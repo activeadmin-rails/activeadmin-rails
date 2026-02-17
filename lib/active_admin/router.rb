@@ -19,7 +19,7 @@ module ActiveAdmin
         if namespace.root?
           router.root namespace.root_to_options.merge(to: namespace.root_to, as: nil)
         else
-          router.namespace namespace.name, namespace.route_options.dup do
+          router.namespace namespace.name, **namespace.route_options.dup do
             router.root namespace.root_to_options.merge(to: namespace.root_to, as: :root)
           end
         end
@@ -89,8 +89,8 @@ module ActiveAdmin
       build_route(action.http_verb, action.name)
     end
 
-    def build_route(verbs, *args)
-      Array.wrap(verbs).each { |verb| router.send(verb, *args) }
+    def build_route(verbs, *args, **kwargs)
+      Array.wrap(verbs).each { |verb| router.send(verb, *args, **kwargs) }
     end
 
     def define_belongs_to_routes(config)
@@ -105,7 +105,7 @@ module ActiveAdmin
     end
 
     def define_namespace(config)
-      router.namespace config.namespace.name, config.namespace.route_options.dup do
+      router.namespace config.namespace.name, **config.namespace.route_options.dup do
         define_routes(config)
       end
     end
