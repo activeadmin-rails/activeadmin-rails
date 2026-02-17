@@ -48,7 +48,7 @@ module ActiveAdmin
       end
 
       it 'should return columns without associations' do
-        expect(subject).to eq([:title, :body, :published_date, :position, :starred, :foo_id, :created_at, :updated_at])
+        expect(subject).to match_array([:title, :body, :published_date, :position, :starred, :foo_id, :created_at, :updated_at])
       end
     end
 

@@ -250,14 +250,14 @@ Feature: Index as Table
       """
     When I am on the index page for posts
     Then I should see the "index_table_posts" table:
-      | [ ] | Id | Title        | Body | Published Date | Author | Position | Category | Starred | Foo | Created At | Updated At | |
-      | [ ] | 2 | Bye bye world | Move your...  |  |  |  |  | No |  | /.*/ | /.*/ | ViewEditDelete |
-      | [ ] | 1 | Hello World   | From the body |  |  |  |  | No |  | /.*/ | /.*/ | ViewEditDelete |
+      | [ ] | Id | Author | Body | Created At | Category | Foo | Position | Published Date | Starred | Title         | Updated At | |
+      | [ ] | 2 |  | Move your...  | /.*/ |  |  |  |  | No | Bye bye world | /.*/ | ViewEditDelete |
+      | [ ] | 1 |  | From the body | /.*/ |  |  |  |  | No | Hello World   | /.*/ | ViewEditDelete |
     When I follow "Id"
     Then I should see the "index_table_posts" table:
-      | [ ] | Id | Title        | Body | Published Date | Author | Position | Category | Starred | Foo | Created At | Updated At | |
-      | [ ] | 1 | Hello World   | From the body |  |  |  |  | No |  | /.*/ | /.*/ | ViewEditDelete |
-      | [ ] | 2 | Bye bye world | Move your...  |  |  |  |  | No |  | /.*/ | /.*/ | ViewEditDelete |
+      | [ ] | Id | Author | Body | Created At | Category | Foo | Position | Published Date | Starred | Title         | Updated At | |
+      | [ ] | 1 |  | From the body | /.*/ |  |  |  |  | No | Hello World   | /.*/ | ViewEditDelete |
+      | [ ] | 2 |  | Move your...  | /.*/ |  |  |  |  | No | Bye bye world | /.*/ | ViewEditDelete |
 
   Scenario: Sorting by a virtual column
     Given a post with the title "Hello World" exists

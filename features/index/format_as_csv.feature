@@ -13,8 +13,8 @@ Feature: Format as CSV
     When I am on the index page for posts
     And I follow "CSV"
     Then I should download a CSV file for "posts" containing:
-    | Id  | Title       | Body | Published date | Position | Starred | Foo    |Created at | Updated at |
-    | \d+ | Hello World |      |                |          |         |        |(.*)       | (.*)       |
+    | Id  | Body | Created at | Foo    | Position | Published date | Starred | Title       | Updated at |
+    | \d+ |      | (.*)       |        |          |                |         | Hello World | (.*)       |
 
   Scenario: Default with alias
     Given a configuration of:
@@ -25,7 +25,7 @@ Feature: Format as CSV
     When I am on the index page for my_articles
     And I follow "CSV"
     Then I should download a CSV file for "my-articles" containing:
-    | Id  | Title       | Body | Published date | Position | Starred | Foo    | Created at | Updated at |
+    | Id  | Body | Created at | Foo    | Position | Published date | Starred | Title       | Updated at |
 
   Scenario: Default with streaming disabled
     Given a configuration of:
@@ -38,8 +38,8 @@ Feature: Format as CSV
     When I am on the index page for posts
     And I follow "CSV"
     Then I should download a CSV file for "posts" containing:
-    | Id  | Title       | Body | Published date | Position | Starred | Foo    |Created at | Updated at |
-    | \d+ | Hello World |      |                |          |         |        |(.*)       | (.*)       |
+    | Id  | Body | Created at | Foo    | Position | Published date | Starred | Title       | Updated at |
+    | \d+ |      | (.*)       |        |          |                |         | Hello World | (.*)       |
 
   Scenario: With CSV format customization
     Given a configuration of:
@@ -104,8 +104,8 @@ Feature: Format as CSV
     When I am on the index page for posts
     And I follow "CSV"
     Then I should download a CSV file with "," separator for "posts" containing:
-      | id  | title | body | published_date | position | starred | foo  | created_at | updated_at |
-      | (.*)| (.*)  | (.*) | (.*)           | (.*)     | (.*)    | (.*) | (.*)       | (.*)       |
+      | id  | body | created_at | foo  | position | published_date | starred | title | updated_at |
+      | (.*)| (.*) | (.*)       | (.*) | (.*)     | (.*)           | (.*)    | (.*) | (.*)       |
 
   Scenario: With humanize_name option turned off globally and enabled locally
     Given a configuration of:

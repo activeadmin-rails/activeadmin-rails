@@ -4,7 +4,7 @@ module ActiveAdmin
     module Attributes
 
       def default_attributes
-        resource_class.columns.each_with_object({}) do |c, attrs|
+        resource_class.columns.sort_by(&:name).each_with_object({}) do |c, attrs|
           unless reject_col?(c)
             name = c.name.to_sym
             attrs[name] = (method_for_column(name) || name)
