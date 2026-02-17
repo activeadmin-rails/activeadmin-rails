@@ -1,14 +1,27 @@
 # Changelog
 
+## 1.8.0 [☰](https://github.com/varyonic/activeadmin-rails/compare/v1.7.2...v1.8.0)
+
+This release supports both Sprockets and Propshaft. CSS has been modernized and updated to Dart Sass.
+
+### Enhancements
+
+* Rails 8.1 support. [#64] by [@varyonic]
+* Support applications using either Propshaft or Sprockets. [#62] by [@varyonic]
+* Replace jquery-rails and jquery-ui-rails gems with CDN assets. [#60] by [@varyonic]
+* Configure Rollup to bundle JavaScript outside of Sprockets. [#58] by [@varyonic] (from [#5868], [#5888] and [@5956] by [@sgara])
+* Modernize CSS. [#57] by [@varyonic]
+* Replace SassC (EOL) with Dart Sass. [#55] by [@varyonic]
+
 ## 1.7.2 [☰](https://github.com/varyonic/activeadmin-rails/compare/v1.7.1...v1.7.2)
 
-#### Minor
+### Enhancements
 
 * Rails 8.0 support. [#54] by [@varyonic]
 
 ## 1.7.1 [☰](https://github.com/varyonic/activeadmin-rails/compare/v1.7.0...v1.7.1)
 
-#### Minor
+### Enhancements
 
 * Rails 7.2 support. [#53] by [@varyonic]
 * Verify Ruby 3.3 support. [#50] by [@varyonic]
@@ -432,10 +445,13 @@ Please check [0-6-stable] for previous changes.
 [#5501]: https://github.com/activeadmin/activeadmin/pull/5501
 [#5516]: https://github.com/activeadmin/activeadmin/pull/5516
 [#5583]: https://github.com/activeadmin/activeadmin/pull/5583
-[#5842]: https://github.com/activeadmin/activeadmin/pull/5842
 [#5650]: https://github.com/activeadmin/activeadmin/pull/5650
 [#5702]: https://github.com/activeadmin/activeadmin/pull/5702
 [#5800]: https://github.com/activeadmin/activeadmin/pull/5800
+[#5842]: https://github.com/activeadmin/activeadmin/pull/5842
+[#5842]: https://github.com/activeadmin/activeadmin/pull/5868
+[#5842]: https://github.com/activeadmin/activeadmin/pull/5888
+[#5842]: https://github.com/activeadmin/activeadmin/pull/5956
 [#6000]: https://github.com/activeadmin/activeadmin/pull/6000
 [#6237]: https://github.com/activeadmin/activeadmin/pull/6237
 [#7235]: https://github.com/activeadmin/activeadmin/pull/7235
@@ -473,6 +489,12 @@ Please check [0-6-stable] for previous changes.
 [#52]: https://github.com/varyonic/activeadmin-rails/pull/52
 [#53]: https://github.com/varyonic/activeadmin-rails/pull/53
 [#54]: https://github.com/varyonic/activeadmin-rails/pull/54
+[#54]: https://github.com/varyonic/activeadmin-rails/pull/55
+[#54]: https://github.com/varyonic/activeadmin-rails/pull/57
+[#54]: https://github.com/varyonic/activeadmin-rails/pull/58
+[#54]: https://github.com/varyonic/activeadmin-rails/pull/60
+[#54]: https://github.com/varyonic/activeadmin-rails/pull/62
+[#54]: https://github.com/varyonic/activeadmin-rails/pull/64
 
 [@5t111111]: https://github.com/5t111111
 [@aarek]: https://github.com/aarek
