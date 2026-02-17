@@ -1,0 +1,18 @@
+source 'https://rubygems.org'
+
+eval_gemfile(File.expand_path(File.join('..', 'Gemfile'), __dir__))
+
+gem 'rails', '~> 8.1.0'
+gem 'rails-i18n'
+gem 'inherited_resources', '>= 1.14.0'
+gem 'formtastic', '>= 5.0.0'
+gem 'ransack', '>= 4.1.0'
+gem 'devise', '~> 4.9'
+gem 'rack', '>= 2.2'
+gem 'bootsnap'
+gem 'draper'
+gem 'propshaft'
+gem 'sqlite3', '>= 2.x'
+gem 'activerecord-jdbcsqlite3-adapter', '>= 70.0.x', platform: :jruby
+
+gemspec path: '../'
