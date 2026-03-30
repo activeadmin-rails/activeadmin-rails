@@ -22,15 +22,15 @@ Gem::Specification.new do |s|
     "source_code_uri" => "https://github.com/varyonic/activeadmin-rails",
   }
 
-  s.required_ruby_version = '>= 2.5'
+  s.required_ruby_version = '>= 3.2'
 
   s.add_dependency 'arbo'
   s.add_dependency 'csv'
   s.add_dependency 'formtastic'
   s.add_dependency 'formtastic_i18n'
   s.add_dependency 'inherited_resources', '>= 1.13.1'
-  s.add_dependency 'kaminari', '>= 1.0.1'
-  s.add_dependency 'railties', '>= 5.0'
-  s.add_dependency 'ransack', '>= 1.8.7'
+  s.add_dependency 'kaminari', '>= 1.2.1'
+  s.add_dependency 'railties', '>= 7.2'
+  s.add_dependency 'ransack', '>= 4.0'
   s.add_dependency 'dartsass-rails'
 end
