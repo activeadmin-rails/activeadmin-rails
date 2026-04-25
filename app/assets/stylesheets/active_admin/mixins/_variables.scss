@@ -49,24 +49,27 @@ $blank-slate-border: 1px dashed #DADADA !default;
 //   :root { --color-primary: #your-color; }
 // Sass variable overrides still work and will flow through to these properties.
 :root {
-  // Colors
-  --color-body-background: #{$body-background-color};
-  --color-primary: #{$primary-color};
-  --color-secondary: #{$secondary-color};
-  --color-text: #{$text-color};
-  --color-link: #{$link-color};
-  --color-section-header-text: #{$section-header-text-color};
-  --color-current-menu-item-background: #{$current-menu-item-background};
-  --color-hover-menu-item-background: #{$hover-menu-item-background};
-  --color-table-stripe: #{$table-stripe-color};
-  --color-table-selected: #{$table-selected-color};
-  --color-error: #{$error-color};
-  --color-blank-slate-primary: #{$blank-slate-primary-color};
-  --color-breadcrumbs: #{$breadcrumbs-color};
-  --color-breadcrumbs-separator: #{$breadcrumbs-separator-color};
-  --color-required-field-marker: #{$required-field-marker-color};
-  --color-form-label: #{$form-label-color};
-  --color-page-header-text: #{$page-header-text-color};
+  // Colors — expressed in oklch for perceptually-uniform interpolation and
+  // easier lightness adjustments. Computed from the default Sass values:
+  //   oklch(L% C H) — L: lightness 0-100, C: chroma, H: hue in degrees
+  // Achromatic colors (greys) use `none` for hue per the CSS spec.
+  --color-body-background: oklch(100% 0 none);           // #FFF
+  --color-primary: oklch(49.97% 0.0109 243);             // #5E6469
+  --color-secondary: oklch(95.51% 0 none);               // #f0f0f0
+  --color-text: oklch(32.68% 0.0055 236.7);              // #323537
+  --color-link: oklch(49.64% 0.0775 243.4);              // #38678b
+  --color-section-header-text: oklch(49.97% 0.0109 243); // = primary
+  --color-current-menu-item-background: oklch(60.53% 0.0132 240); // primary +12% l
+  --color-hover-menu-item-background: oklch(60.53% 0.0132 240);   // = current
+  --color-table-stripe: oklch(96.94% 0.0011 197.1);      // primary +57% l
+  --color-table-selected: oklch(91.29% 0.0161 239.1);    // #d9e4ec
+  --color-error: oklch(43.98% 0.1486 29.8);              // #932419
+  --color-blank-slate-primary: oklch(73.8% 0 none);      // #AAA
+  --color-breadcrumbs: oklch(66.17% 0.0188 248.1);       // #8a949e
+  --color-breadcrumbs-separator: oklch(75.97% 0.0146 248); // #aab2ba
+  --color-required-field-marker: oklch(73.8% 0 none);    // #aaa
+  --color-form-label: oklch(49.97% 0.0109 243);          // = primary
+  --color-page-header-text: oklch(84.83% 0 none);        // #cdcdcd
 
   // Shadows
   --shadow-sm: #{$shadow-sm};
