@@ -43,3 +43,50 @@ $text-input-horizontal-padding: 10px !default;
 $text-input-total-padding: $text-input-horizontal-padding * 2 + $border-width * 2;
 
 $blank-slate-border: 1px dashed #DADADA !default;
+
+// CSS custom properties — mirrors the Sass variables above.
+// These can be overridden at runtime with plain CSS:
+//   :root { --color-primary: #your-color; }
+// Sass variable overrides still work and will flow through to these properties.
+:root {
+  // Colors
+  --color-body-background: #{$body-background-color};
+  --color-primary: #{$primary-color};
+  --color-secondary: #{$secondary-color};
+  --color-text: #{$text-color};
+  --color-link: #{$link-color};
+  --color-section-header-text: #{$section-header-text-color};
+  --color-current-menu-item-background: #{$current-menu-item-background};
+  --color-hover-menu-item-background: #{$hover-menu-item-background};
+  --color-table-stripe: #{$table-stripe-color};
+  --color-table-selected: #{$table-selected-color};
+  --color-error: #{$error-color};
+  --color-blank-slate-primary: #{$blank-slate-primary-color};
+  --color-breadcrumbs: #{$breadcrumbs-color};
+  --color-breadcrumbs-separator: #{$breadcrumbs-separator-color};
+  --color-required-field-marker: #{$required-field-marker-color};
+  --color-form-label: #{$form-label-color};
+  --color-page-header-text: #{$page-header-text-color};
+
+  // Shadows
+  --shadow-sm: #{$shadow-sm};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+  --shadow-inset: #{$shadow-inset};
+  --shadow-none: #{$shadow-none};
+  --text-shadow-light: #{$text-shadow-light};
+  --text-shadow-dark: #{$text-shadow-dark};
+
+  // Typography
+  --font-family-sans: #{$font-family-sans};
+
+  // Sizes
+  --border-width: #{$border-width};
+  --horizontal-page-margin: #{$horizontal-page-margin};
+  --sidebar-width: #{$sidebar-width};
+  --cell-padding: #{$cell-padding};
+  --cell-horizontal-padding: #{$cell-horizontal-padding};
+  --section-padding: #{$section-padding};
+  --text-input-horizontal-padding: #{$text-input-horizontal-padding};
+  --text-input-total-padding: #{$text-input-total-padding};
+}
