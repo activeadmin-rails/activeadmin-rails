@@ -16,7 +16,7 @@ gem 'parallel_tests'
 gem 'pry' # Easily debug from your console with `binding.pry`
 
 # Code style
-gem 'rubocop', '0.51.0'
+gem 'rubocop'
 gem 'mdl', '0.4.0'
 
 # Translations
