@@ -3,7 +3,7 @@
 
 @mixin section-header {
   @include secondary-gradient;
-  text-shadow: $text-shadow-light;
+  text-shadow: var(--text-shadow-light, #{$text-shadow-light});
   border: solid 1px #cdcdcd;
   border-color: #e6e6e6 #d4d4d4 #cdcdcd #d4d4d4;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 0 1px #FFF inset;
@@ -12,7 +12,7 @@
   font-weight: bold;
   line-height: 18px;
   margin-bottom: 0.5em;
-  color: $section-header-text-color;
+  color: var(--color-section-header-text, #{$section-header-text-color});
 
   padding: 5px 10px 3px 10px;
 }
@@ -20,7 +20,7 @@
 @mixin section-background {
   background: #f4f4f4;
   border-radius: 4px;
-  box-shadow: $shadow-inset;
+  box-shadow: var(--shadow-inset, #{$shadow-inset});
 }
 
 @mixin section {
@@ -35,7 +35,7 @@
     }
   }
 
-  > div { padding: 3px $section-padding $section-padding $section-padding; }
+  > div { padding: 3px var(--section-padding, #{$section-padding}) var(--section-padding, #{$section-padding}) var(--section-padding, #{$section-padding}); }
 
   hr {
     border: none;

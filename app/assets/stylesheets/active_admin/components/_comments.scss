@@ -20,7 +20,7 @@
         font-size: 1.2em;
         font-weight: bold;
         margin: 0;
-        color: $primary-color;
+        color: var(--color-primary, #{$primary-color});
       }
     }
     .active_admin_comment_body {
@@ -36,7 +36,7 @@
       margin: 0;
       padding: 0;
       background: none;
-      box-shadow: $shadow-none;
+      box-shadow: var(--shadow-none, #{$shadow-none});
     }
     li { padding: 0; }
     fieldset.buttons { padding: 0; margin-top: 5px;}

@@ -7,7 +7,7 @@ body.logged_out {
     width: 500px;
     margin: 70px auto;
     #active_admin_content {
-      box-shadow: $shadow-md;
+      box-shadow: var(--shadow-md, #{$shadow-md});
       background: #fff;
       padding: 13px 30px;
     }
@@ -16,7 +16,7 @@ body.logged_out {
   h2 {
     @include section-header;
     @include primary-gradient;
-  text-shadow: $text-shadow-dark;
+  text-shadow: var(--text-shadow-dark, #{$text-shadow-dark});
     box-shadow: 0 1px 3px rgba(0,0,0,0.3);
     border: none;
     color: #fff;
@@ -28,7 +28,7 @@ body.logged_out {
     flex-direction: column;
     form {
       fieldset {
-        box-shadow: $shadow-none;
+        box-shadow: var(--shadow-none, #{$shadow-none});
         background: none;
         padding: 0;
         margin-bottom: 0;

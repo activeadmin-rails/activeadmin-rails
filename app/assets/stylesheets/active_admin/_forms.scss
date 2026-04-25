@@ -27,10 +27,10 @@ form {
         float: left;
         font-size: 1.0em;
         font-weight: bold;
-        color: $form-label-color;
+        color: var(--color-form-label, #{$form-label-color});
         abbr {
           border: none;
-          color:  $required-field-marker-color;
+          color: var(--color-required-field-marker, #{$required-field-marker-color});
         }
       }
     }
@@ -76,7 +76,7 @@ form {
   .ui-sortable {
     // give the handle space!
     input[type=text], input[type=password], input[type=email], input[type=number], input[type=url], input[type=tel], textarea {
-      width: calc(80% - #{$text-input-total-padding} - 2em - 1px);
+      width: calc(80% - var(--text-input-total-padding, #{$text-input-total-padding}) - 2em - 1px);
     }
   }
 
@@ -129,22 +129,22 @@ form {
   input[type=date],
   input[type=time],
   textarea {
-    width: calc(80% - #{$text-input-total-padding});
-    border: $border-width solid #c9d0d6;
+    width: calc(80% - var(--text-input-total-padding, #{$text-input-total-padding}));
+    border: var(--border-width, #{$border-width}) solid #c9d0d6;
     border-radius: 3px;
     font-size: 0.95em;
-    font-family: $font-family-sans;
+    font-family: var(--font-family-sans, #{$font-family-sans});
     outline: none;
-    padding: 8px $text-input-horizontal-padding 7px;
+    padding: 8px var(--text-input-horizontal-padding, #{$text-input-horizontal-padding}) 7px;
 
     &:focus {
-      border: $border-width solid #99a2aa;
+      border: var(--border-width, #{$border-width}) solid #99a2aa;
       box-shadow: 0 0 4px #99a2aa;
     }
   }
 
   input[type=date] {
-    width: calc(100% - #{$text-input-total-padding});
+    width: calc(100% - var(--text-input-total-padding, #{$text-input-total-padding}));
   }
 
   fieldset > ol > li {
@@ -201,12 +201,12 @@ form {
 
     /* Errors */
     p.inline-errors {
-      color: $error-color;
+      color: var(--color-error, #{$error-color});
       font-weight: bold;
       margin:0.3em 0 0 20%;
     }
     ul.errors {
-      color: $error-color;
+      color: var(--color-error, #{$error-color});
       margin:0.5em 0 0 20%;
       list-style:square;
       li { padding:0; border:none; display:list-item; }
@@ -214,7 +214,7 @@ form {
 
     &.error {
       input[type=text], input[type=password], input[type=email], input[type=number], input[type=url], input[type=tel], textarea {
-        border: $border-width solid $error-color;
+        border: var(--border-width, #{$border-width}) solid var(--color-error, #{$error-color});
       }
     }
   }
@@ -223,7 +223,7 @@ form {
   ul.errors {
     background: color.adjust($error-color, $lightness: 60%);
     border-radius: 4px;
-    color: $error-color;
+    color: var(--color-error, #{$error-color});
     font-weight: bold;
     margin-bottom: 10px;
     padding: 10px;
@@ -270,7 +270,7 @@ $sidebar-inner-content-width: $sidebar-width - ($section-padding * 2);
   label {
     display: block;
     text-transform: uppercase;
-    color:  $form-label-color;
+    color: var(--color-form-label, #{$form-label-color});
     font-size: 0.9em;
     font-weight: bold;
   }

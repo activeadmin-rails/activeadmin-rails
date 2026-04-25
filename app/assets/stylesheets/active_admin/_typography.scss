@@ -31,7 +31,7 @@ body { font-size: 75%; font-family: "Helvetica Neue", Arial, Helvetica, sans-ser
 // Headings
 h1,h2,h3,h4,h5,h6 {
   font-weight: normal;
-  color: $primary-color;
+  color: var(--color-primary, #{$primary-color});
   img { margin: 0; }
 }
 

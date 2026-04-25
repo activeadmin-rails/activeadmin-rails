@@ -36,9 +36,9 @@
 @use "active_admin/structure/title_bar";
 
 body {
-  font-family: $font-family-sans;
+  font-family: var(--font-family-sans, #{$font-family-sans});
   line-height: 1.5;
   font-size: 72%;
-  background: $body-background-color;
-  color: $text-color;
+  background: var(--color-body-background, #{$body-background-color});
+  color: var(--color-text, #{$text-color});
 }

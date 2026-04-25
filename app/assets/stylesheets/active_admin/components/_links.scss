@@ -1,7 +1,7 @@
 @use "active_admin/mixins/all" as *;
 
 a, a:link, a:visited {
-  color: $link-color;
+  color: var(--color-link, #{$link-color});
   text-decoration: underline;
 }
 a:hover { text-decoration: none; }

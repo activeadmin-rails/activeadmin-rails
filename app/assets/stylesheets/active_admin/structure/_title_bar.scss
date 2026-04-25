@@ -11,7 +11,7 @@
   width: 100%;
   position: relative;
   margin: 0;
-  padding: 10px $horizontal-page-margin;
+  padding: 10px var(--horizontal-page-margin, #{$horizontal-page-margin});
   z-index: 1000;
 
   #titlebar_left, #titlebar_right {

@@ -27,8 +27,8 @@ body.logged_in {
 
 body.logged_out {
   .flash {
-    box-shadow: $shadow-none;
-    text-shadow: $text-shadow-light;
+    box-shadow: var(--shadow-none, #{$shadow-none});
+    text-shadow: var(--text-shadow-light, #{$text-shadow-light});
     background: none;
     color: #666;
     font-weight: bold;
