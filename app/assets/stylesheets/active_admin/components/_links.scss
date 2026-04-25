@@ -1,3 +1,5 @@
+@use "active_admin/mixins/all" as *;
+
 a, a:link, a:visited {
   color: $link-color;
   text-decoration: underline;

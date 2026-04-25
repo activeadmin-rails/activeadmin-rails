@@ -1,14 +1,12 @@
 /* Active Admin Print Stylesheet */
 
-// Set colors used elsewhere
-$primary-color: black;
-$text-color: black;
-
 // Normalize
-@import "active_admin/normalize";
+@use "active_admin/normalize";
 
-// Partials
-@import "active_admin/typography";
+// Partials — override color variables for print
+@use "active_admin/typography" with (
+  $primary-color: black
+);
 
 body {
   font-family: Helvetica, Arial, sans-serif;
@@ -18,11 +16,11 @@ body {
   width: 99%;
   margin: 0;
   padding: .5%;
-  color: $text-color;
+  color: black;
 }
 
 a {
-  color: $text-color;
+  color: black;
   text-decoration: none;
 }
 

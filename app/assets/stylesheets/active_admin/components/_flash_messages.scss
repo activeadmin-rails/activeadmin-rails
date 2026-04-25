@@ -1,3 +1,5 @@
+@use "active_admin/mixins/all" as *;
+
 body.logged_in {
   .flash {
     @include gradient(#f7f1d3, #f5edc5);

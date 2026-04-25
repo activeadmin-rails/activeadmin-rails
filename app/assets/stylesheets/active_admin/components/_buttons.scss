@@ -1,3 +1,5 @@
+@use "active_admin/mixins/all" as *;
+
 a.member_link {
   margin-right: 7px;
   white-space: nowrap;

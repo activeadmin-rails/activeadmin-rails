@@ -1,3 +1,5 @@
+@use "active_admin/mixins/all" as *;
+
 .unsupported_browser {
   padding: 10px 30px;
   color: #211e14;

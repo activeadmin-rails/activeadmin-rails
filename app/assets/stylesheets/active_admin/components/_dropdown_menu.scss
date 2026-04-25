@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "active_admin/mixins/all" as *;
 
 .dropdown_menu {
   display: inline;

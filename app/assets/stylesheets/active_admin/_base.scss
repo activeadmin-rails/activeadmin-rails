@@ -1,39 +1,39 @@
 /* Active Admin CSS */
 // Normalize
-@import "active_admin/normalize";
+@use "active_admin/normalize";
 
 // Load variables and mixins so components have access to them
-@import "active_admin/mixins";
+@use "active_admin/mixins" as *;
 
 // Partials
-@import "active_admin/typography";
-@import "active_admin/header";
-@import "active_admin/forms";
-@import "active_admin/components/comments";
-@import "active_admin/components/flash_messages";
-@import "active_admin/components/date_picker";
-@import "active_admin/components/tables";
-@import "active_admin/components/batch_actions";
-@import "active_admin/components/modal_dialog";
-@import "active_admin/components/blank_slates";
-@import "active_admin/components/breadcrumbs";
-@import "active_admin/components/dropdown_menu";
-@import "active_admin/components/buttons";
-@import "active_admin/components/grid";
-@import "active_admin/components/links";
-@import "active_admin/components/pagination";
-@import "active_admin/components/panels";
-@import "active_admin/components/columns";
-@import "active_admin/components/scopes";
-@import "active_admin/components/status_tags";
-@import "active_admin/components/table_tools";
-@import "active_admin/components/index_list";
-@import "active_admin/components/unsupported_browser";
-@import "active_admin/components/tabs";
-@import "active_admin/pages/logged_out";
-@import "active_admin/structure/footer";
-@import "active_admin/structure/main_structure";
-@import "active_admin/structure/title_bar";
+@use "active_admin/typography";
+@use "active_admin/header";
+@use "active_admin/forms";
+@use "active_admin/components/comments";
+@use "active_admin/components/flash_messages";
+@use "active_admin/components/date_picker";
+@use "active_admin/components/tables";
+@use "active_admin/components/batch_actions";
+@use "active_admin/components/modal_dialog";
+@use "active_admin/components/blank_slates";
+@use "active_admin/components/breadcrumbs";
+@use "active_admin/components/dropdown_menu";
+@use "active_admin/components/buttons";
+@use "active_admin/components/grid";
+@use "active_admin/components/links";
+@use "active_admin/components/pagination";
+@use "active_admin/components/panels";
+@use "active_admin/components/columns";
+@use "active_admin/components/scopes";
+@use "active_admin/components/status_tags";
+@use "active_admin/components/table_tools";
+@use "active_admin/components/index_list";
+@use "active_admin/components/unsupported_browser";
+@use "active_admin/components/tabs";
+@use "active_admin/pages/logged_out";
+@use "active_admin/structure/footer";
+@use "active_admin/structure/main_structure";
+@use "active_admin/structure/title_bar";
 
 body {
   font-family: $font-family-sans;

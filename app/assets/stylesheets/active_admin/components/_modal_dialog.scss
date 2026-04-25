@@ -1,3 +1,5 @@
+@use "active_admin/mixins/all" as *;
+
 .ui-widget-overlay {
   position: fixed;
   background: rgba(0,0,0,.2);

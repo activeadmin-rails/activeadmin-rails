@@ -1,5 +1,6 @@
 @use "sass:color";
 @use "sass:math";
+@use "active_admin/mixins/all" as *;
 // -------------------------------------- Active Admin Forms
 form {
   /* Reset margins & Padding */

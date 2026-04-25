@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "active_admin/mixins/all" as *;
 
 .status_tag {
   background: color.adjust($secondary-color, $lightness: -15%);

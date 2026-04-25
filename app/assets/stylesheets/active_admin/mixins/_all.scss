@@ -1,4 +1,4 @@
-@import "active_admin/mixins/variables";
-@import "active_admin/mixins/gradients";
-@import "active_admin/mixins/buttons";
-@import "active_admin/mixins/sections";
+@forward "active_admin/mixins/variables";
+@forward "active_admin/mixins/gradients";
+@forward "active_admin/mixins/buttons";
+@forward "active_admin/mixins/sections";

@@ -1,3 +1,6 @@
+@use "active_admin/mixins/variables" as *;
+@use "active_admin/mixins/gradients" as *;
+
 @mixin section-header {
   @include secondary-gradient;
   text-shadow: $text-shadow-light;

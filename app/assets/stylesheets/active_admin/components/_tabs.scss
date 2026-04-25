@@ -1,3 +1,5 @@
+@use "active_admin/mixins/all" as *;
+
 .ui-tabs-nav {
   list-style: none;
   display: block;

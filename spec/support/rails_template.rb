@@ -200,7 +200,7 @@ generate 'active_admin:install'
 
 # For Propshaft (no Sprockets), compile CSS with dartsass after Active Admin is installed
 unless sprockets?
-  create_file 'app/assets/stylesheets/active_admin_print.scss', '@import "active_admin/print";'
+  create_file 'app/assets/stylesheets/active_admin_print.scss', '@use "active_admin/print";'
   rails_command 'dartsass:build'
 end
 

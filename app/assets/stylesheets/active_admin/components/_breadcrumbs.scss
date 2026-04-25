@@ -1,3 +1,5 @@
+@use "active_admin/mixins/all" as *;
+
 .breadcrumb {
   display: block;
   font-size: 0.9em;

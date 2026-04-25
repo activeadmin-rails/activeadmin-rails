@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "active_admin/mixins/variables" as *;
 $secondary-gradient-start: #efefef !default;
 $secondary-gradient-stop: #dfe1e2 !default;
 

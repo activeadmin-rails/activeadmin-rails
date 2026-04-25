@@ -1,3 +1,5 @@
+@use "active_admin/mixins/all" as *;
+
 body.logged_out {
   background: #e8e9ea;
 

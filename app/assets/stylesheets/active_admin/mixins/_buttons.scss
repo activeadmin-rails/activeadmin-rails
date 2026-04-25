@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "active_admin/mixins/variables" as *;
 @mixin basic-button {
   border-radius: 200px;
   display: inline-block;
