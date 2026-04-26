@@ -71,6 +71,22 @@ $blank-slate-border: 1px dashed #DADADA !default;
   --color-form-label: oklch(49.97% 0.0109 243);          // = primary
   --color-page-header-text: oklch(84.83% 0 none);        // #cdcdcd
 
+  // Header surfaces
+  --color-header-background-start: oklch(54.62% 0.0119 241.2); // primary +5% l
+  --color-header-background-end: oklch(42.52% 0.0093 244.6);   // primary -7% l
+  --color-header-border-bottom: oklch(38.37% 0.0084 245.1);    // primary -11% l
+
+  // Section / panel surfaces
+  --color-secondary-gradient-start: oklch(95.21% 0 none);     // #efefef
+  --color-secondary-gradient-stop: oklch(90.85% 0.0026 228.8); // #dfe1e2
+  --color-section-background: oklch(96.72% 0 none);           // #f4f4f4
+  --color-section-header-border-top: oklch(92.49% 0 none);    // #e6e6e6
+  --color-section-header-border-right: oklch(86.99% 0 none);  // #d4d4d4
+  --color-section-header-border-bottom: oklch(84.83% 0 none); // #cdcdcd
+  --color-section-header-border-left: oklch(86.99% 0 none);   // #d4d4d4
+  --color-section-divider: oklch(93.1% 0 none);               // #E8E8E8
+  --shadow-section-header: 0 1px 3px rgba(0,0,0,0.12), 0 0 1px #FFF inset;
+
   // Shadows
   --shadow-sm: #{$shadow-sm};
   --shadow-md: #{$shadow-md};

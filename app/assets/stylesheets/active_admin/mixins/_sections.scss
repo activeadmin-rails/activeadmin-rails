@@ -4,9 +4,9 @@
 @mixin section-header {
   @include secondary-gradient;
   text-shadow: var(--text-shadow-light, #{$text-shadow-light});
-  border: solid 1px #cdcdcd;
-  border-color: #e6e6e6 #d4d4d4 #cdcdcd #d4d4d4;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 0 1px #FFF inset;
+  border: solid 1px;
+  border-color: var(--color-section-header-border-top, #e6e6e6) var(--color-section-header-border-right, #d4d4d4) var(--color-section-header-border-bottom, #cdcdcd) var(--color-section-header-border-left, #d4d4d4);
+  box-shadow: var(--shadow-section-header, 0 1px 3px rgba(0,0,0,0.12), 0 0 1px #FFF inset);
 
   font-size: 1em;
   font-weight: bold;
@@ -18,7 +18,7 @@
 }
 
 @mixin section-background {
-  background: #f4f4f4;
+  background: var(--color-section-background, #f4f4f4);
   border-radius: 4px;
   box-shadow: var(--shadow-inset, #{$shadow-inset});
 }
@@ -39,6 +39,6 @@
 
   hr {
     border: none;
-    border-bottom: 1px solid #E8E8E8;
+    border-bottom: 1px solid var(--color-section-divider, #E8E8E8);
   }
 }

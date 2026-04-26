@@ -9,12 +9,22 @@ $secondary-gradient-stop: #dfe1e2 !default;
 }
 
 @mixin primary-gradient {
-  @include gradient(color.adjust($primary-color, $lightness: 5%), color.adjust($primary-color, $lightness: -7%));
-  border-bottom: 1px solid color.adjust($primary-color, $lightness: -11%);
+  background-color: var(--color-header-background-start, #{color.adjust($primary-color, $lightness: 5%)});
+  background-image: linear-gradient(
+    180deg,
+    var(--color-header-background-start, #{color.adjust($primary-color, $lightness: 5%)}),
+    var(--color-header-background-end, #{color.adjust($primary-color, $lightness: -7%)})
+  );
+  border-bottom: 1px solid var(--color-header-border-bottom, #{color.adjust($primary-color, $lightness: -11%)});
 }
 
 @mixin secondary-gradient {
-  @include gradient($secondary-gradient-start, $secondary-gradient-stop);
+  background-color: var(--color-secondary-gradient-start, #{$secondary-gradient-start});
+  background-image: linear-gradient(
+    180deg,
+    var(--color-secondary-gradient-start, #{$secondary-gradient-start}),
+    var(--color-secondary-gradient-stop, #{$secondary-gradient-stop})
+  );
 }
 
 @mixin highlight-gradient {
