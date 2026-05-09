@@ -43,26 +43,26 @@
 }
 
 @mixin light-button {
-  background-color: #FFFFFF;
-  background-image: linear-gradient(180deg, #FFFFFF, #E7E7E7);
-  box-shadow: 0 1px 1px rgba(0,0,0,0.10), 0 1px 0 0 rgba(255,255,255, 0.8) inset;
-  border: solid 1px #c7c7c7;
-  border-color: #d3d3d3 #c7c7c7 #c2c2c2 #c7c7c7;
+  background-color: var(--button-light-background, #{$button-light-background});
+  background-image: var(--button-light-background-image, #{$button-light-background-image});
+  box-shadow: var(--button-light-shadow, #{$button-light-shadow});
+  border: var(--button-light-border, #{$button-light-border});
+  border-color: var(--button-light-border-color, #{$button-light-border-color});
   text-shadow: var(--text-shadow-light, #{$text-shadow-light});
-  color: var(--color-primary, #{$primary-color});
+  color: var(--button-light-color, var(--color-primary, #{$primary-color}));
   @include basic-button;
 
   &:not(.disabled) {
     &:hover {
-      background-color: #FFFFFF;
-      background-image: linear-gradient(180deg, #FFFFFF, #F1F1F1);
+      background-color: var(--button-light-background-hover, #{$button-light-background-hover});
+      background-image: var(--button-light-background-image-hover, #{$button-light-background-image-hover});
     }
 
     &:active {
-      box-shadow: 0 1px 2px rgba(0,0,0,0.22) inset, 0 1px 0 0px #EEE;
-      border-color: #c2c2c2 #b9b9b9 #b7b7b7 #b9b9b9;
-      background-color: #F3F3F3;
-      background-image: linear-gradient(180deg, #F3F3F3, #D8D8D8);
+      box-shadow: var(--button-light-shadow-active, #{$button-light-shadow-active});
+      border-color: var(--button-light-border-color-active, #{$button-light-border-color-active});
+      background-color: var(--button-light-background-active, #{$button-light-background-active});
+      background-image: var(--button-light-background-image-active, #{$button-light-background-image-active});
     }
   }
 

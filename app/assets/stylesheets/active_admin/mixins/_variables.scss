@@ -74,6 +74,23 @@ $button-default-background-active:        color.adjust($primary-color, $lightnes
 $button-default-background-image-active:  linear-gradient(180deg, color.adjust($primary-color, $lightness: 8%), color.adjust($primary-color, $lightness: -17%)) !default;
 $button-default-shadow-active:            0 1px 3px rgba(0, 0, 0, 0.40) inset, 0 1px 0 0px #FFF !default;
 
+// Light-button skin (used by .button.cancel, modal Cancel, sidebar
+// dropdowns, pagination prev/next, tabs, table tools, .clear_filters_btn,
+// span.action_item via SBSC convention). Same surface shape as
+// default-button so consumers can re-skin both buttons coherently.
+$button-light-background:                 #FFFFFF !default;
+$button-light-background-image:           linear-gradient(180deg, #FFFFFF, #E7E7E7) !default;
+$button-light-color:                      var(--color-primary, #{$primary-color}) !default;
+$button-light-border:                     solid 1px #c7c7c7 !default;
+$button-light-border-color:               #d3d3d3 #c7c7c7 #c2c2c2 #c7c7c7 !default;
+$button-light-shadow:                     0 1px 1px rgba(0, 0, 0, 0.10), 0 1px 0 0 rgba(255, 255, 255, 0.8) inset !default;
+$button-light-background-hover:           #FFFFFF !default;
+$button-light-background-image-hover:     linear-gradient(180deg, #FFFFFF, #F1F1F1) !default;
+$button-light-background-active:          #F3F3F3 !default;
+$button-light-background-image-active:    linear-gradient(180deg, #F3F3F3, #D8D8D8) !default;
+$button-light-border-color-active:        #c2c2c2 #b9b9b9 #b7b7b7 #b9b9b9 !default;
+$button-light-shadow-active:              0 1px 2px rgba(0, 0, 0, 0.22) inset, 0 1px 0 0px #EEE !default;
+
 // CSS custom properties — mirrors the Sass variables above.
 // These can be overridden at runtime with plain CSS:
 //   :root { --color-primary: #your-color; }
@@ -160,4 +177,19 @@ $button-default-shadow-active:            0 1px 3px rgba(0, 0, 0, 0.40) inset, 0
   --button-default-background-active:        #{$button-default-background-active};
   --button-default-background-image-active:  #{$button-default-background-image-active};
   --button-default-shadow-active:            #{$button-default-shadow-active};
+
+  // Light-button skin (flat white-ish, used by Cancel buttons, sidebar
+  // dropdowns, pagination prev/next, tabs, table tools).
+  --button-light-background:                 #{$button-light-background};
+  --button-light-background-image:           #{$button-light-background-image};
+  --button-light-color:                      #{$button-light-color};
+  --button-light-border:                     #{$button-light-border};
+  --button-light-border-color:               #{$button-light-border-color};
+  --button-light-shadow:                     #{$button-light-shadow};
+  --button-light-background-hover:           #{$button-light-background-hover};
+  --button-light-background-image-hover:     #{$button-light-background-image-hover};
+  --button-light-background-active:          #{$button-light-background-active};
+  --button-light-background-image-active:    #{$button-light-background-image-active};
+  --button-light-border-color-active:        #{$button-light-border-color-active};
+  --button-light-shadow-active:              #{$button-light-shadow-active};
 }
