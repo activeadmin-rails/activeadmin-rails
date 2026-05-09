@@ -56,6 +56,24 @@ $blank-slate-border: 1px dashed #DADADA !default;
 $button-border-radius: 200px !default;
 $button-padding: 7px 16px 6px !default;
 
+// Default-button skin (used by .button, input[type=submit], modal OK,
+// pagination current page, action items rendered via dark-button).
+// Each surface property is a separate Sass variable so consumers can
+// switch from AA's gradient depth-effect look to a flat Primer-style
+// button by overriding individual tokens (e.g. drop the gradient with
+// `--button-default-background-image: none`).
+$button-default-background:               color.adjust($primary-color, $lightness: 15%) !default;
+$button-default-background-image:         linear-gradient(180deg, color.adjust($primary-color, $lightness: 15%), color.adjust($primary-color, $lightness: -12%)) !default;
+$button-default-color:                    #efefef !default;
+$button-default-border:                   solid 1px #484e53 !default;
+$button-default-border-color:             #616a71 #484e53 #363b3f #484e53 !default;
+$button-default-shadow:                   0 1px 1px rgba(0, 0, 0, 0.10), 0 1px 0 0px rgba(255, 255, 255, 0.2) inset !default;
+$button-default-background-hover:         color.adjust($primary-color, $lightness: 18%) !default;
+$button-default-background-image-hover:   linear-gradient(180deg, color.adjust($primary-color, $lightness: 18%), color.adjust($primary-color, $lightness: -9%)) !default;
+$button-default-background-active:        color.adjust($primary-color, $lightness: 8%) !default;
+$button-default-background-image-active:  linear-gradient(180deg, color.adjust($primary-color, $lightness: 8%), color.adjust($primary-color, $lightness: -17%)) !default;
+$button-default-shadow-active:            0 1px 3px rgba(0, 0, 0, 0.40) inset, 0 1px 0 0px #FFF !default;
+
 // CSS custom properties — mirrors the Sass variables above.
 // These can be overridden at runtime with plain CSS:
 //   :root { --color-primary: #your-color; }
@@ -127,4 +145,19 @@ $button-padding: 7px 16px 6px !default;
   // Buttons
   --button-border-radius: #{$button-border-radius};
   --button-padding: #{$button-padding};
+
+  // Default-button skin (gradient, border, text, shadow). All surfaces
+  // exposed so consumers can re-skin the button entirely (e.g. flat
+  // Primer-style) without forking mixins/_buttons.scss.
+  --button-default-background:               #{$button-default-background};
+  --button-default-background-image:         #{$button-default-background-image};
+  --button-default-color:                    #{$button-default-color};
+  --button-default-border:                   #{$button-default-border};
+  --button-default-border-color:             #{$button-default-border-color};
+  --button-default-shadow:                   #{$button-default-shadow};
+  --button-default-background-hover:         #{$button-default-background-hover};
+  --button-default-background-image-hover:   #{$button-default-background-image-hover};
+  --button-default-background-active:        #{$button-default-background-active};
+  --button-default-background-image-active:  #{$button-default-background-image-active};
+  --button-default-shadow-active:            #{$button-default-shadow-active};
 }

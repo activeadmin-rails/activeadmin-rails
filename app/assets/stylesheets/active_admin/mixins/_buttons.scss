@@ -19,25 +19,25 @@
 }
 
 @mixin default-button {
-  background-color: color.adjust($primary-color, $lightness: 15%);
-  background-image: linear-gradient(180deg, color.adjust($primary-color, $lightness: 15%), color.adjust($primary-color, $lightness: -12%));
+  background-color: var(--button-default-background, #{$button-default-background});
+  background-image: var(--button-default-background-image, #{$button-default-background-image});
   text-shadow: var(--text-shadow-dark, #{$text-shadow-dark});
-  box-shadow: 0 1px 1px rgba(0,0,0,0.10), 0 1px 0 0px rgba(255,255,255, 0.2) inset;
-  border: solid 1px #484e53;
-  border-color: #616a71 #484e53 #363b3f #484e53;
-  color: #efefef;
+  box-shadow: var(--button-default-shadow, #{$button-default-shadow});
+  border: var(--button-default-border, #{$button-default-border});
+  border-color: var(--button-default-border-color, #{$button-default-border-color});
+  color: var(--button-default-color, #{$button-default-color});
   @include basic-button;
 
   &:not(.disabled) {
     &:hover{
-      background-color: color.adjust($primary-color, $lightness: 18%);
-      background-image: linear-gradient(180deg, color.adjust($primary-color, $lightness: 18%), color.adjust($primary-color, $lightness: -9%));
+      background-color: var(--button-default-background-hover, #{$button-default-background-hover});
+      background-image: var(--button-default-background-image-hover, #{$button-default-background-image-hover});
     }
 
     &:active {
-      box-shadow: 0 1px 3px rgba(0,0,0,0.40) inset, 0 1px 0 0px #FFF;
-      background-color: color.adjust($primary-color, $lightness: 8%);
-      background-image: linear-gradient(180deg, color.adjust($primary-color, $lightness: 8%), color.adjust($primary-color, $lightness: -17%));
+      box-shadow: var(--button-default-shadow-active, #{$button-default-shadow-active});
+      background-color: var(--button-default-background-active, #{$button-default-background-active});
+      background-image: var(--button-default-background-image-active, #{$button-default-background-image-active});
     }
   }
 }
