@@ -37,8 +37,8 @@
 
 body {
   font-family: var(--font-family-sans, #{$font-family-sans});
-  line-height: 1.5;
-  font-size: 72%;
+  line-height: var(--line-height-base, #{$line-height-base});
+  font-size: var(--font-size-base, #{$font-size-base});
   background: var(--color-body-background, #{$body-background-color});
   color: var(--color-text, #{$text-color});
 }

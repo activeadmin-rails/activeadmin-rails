@@ -23,10 +23,12 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 // OTHER DEALINGS IN THE SOFTWARE.
 $primary-color: #5E6469 !default;
+$font-family-mono: 'andale mono', 'lucida console', monospace !default;
 
-// Default font settings.  The font-size percentage is of 16px. (0.75 * 16px = 12px) */
-html { font-size:100.01%; }
-body { font-size: 75%; font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; }
+// Default font settings.
+// `body` font-size and font-family are set in _base.scss using the
+// --font-size-base, --line-height-base, and --font-family-sans tokens.
+html { font-size: 100.01%; }
 
 // Headings
 h1,h2,h3,h4,h5,h6 {
@@ -64,7 +66,7 @@ address     { margin: 0 0 1.5em; font-style: italic; }
 del         { color:#666; }
 
 pre         { margin: 1.5em 0; white-space: pre; }
-pre,code,tt { font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5; }
+pre,code,tt { font: 1em var(--font-family-mono, #{$font-family-mono}); line-height: 1.5; }
 
 // Lists
 li ul,

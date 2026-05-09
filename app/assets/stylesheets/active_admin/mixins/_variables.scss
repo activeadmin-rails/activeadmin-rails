@@ -23,6 +23,12 @@ $text-shadow-light: 0 1px 0 rgba(255, 255, 255, 0.9) !default;
 $text-shadow-dark: 0 1px 0 rgba(0, 0, 0, 0.6) !default;
 
 $font-family-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$font-family-mono: 'andale mono', 'lucida console', monospace !default;
+
+// Body font-size is a percentage of the user agent default (typically 16px),
+// so the document scales with the browser's accessibility setting.
+$font-size-base: 72% !default;
+$line-height-base: 1.5 !default;
 
 $error-color: #932419 !default;
 $blank-slate-primary-color: #AAA !default;
@@ -98,6 +104,9 @@ $blank-slate-border: 1px dashed #DADADA !default;
 
   // Typography
   --font-family-sans: #{$font-family-sans};
+  --font-family-mono: #{$font-family-mono};
+  --font-size-base: #{$font-size-base};
+  --line-height-base: #{$line-height-base};
 
   // Sizes
   --border-width: #{$border-width};
