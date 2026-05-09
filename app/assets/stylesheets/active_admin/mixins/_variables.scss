@@ -50,6 +50,12 @@ $text-input-total-padding: $text-input-horizontal-padding * 2 + $border-width * 
 
 $blank-slate-border: 1px dashed #DADADA !default;
 
+// Button shape — separated so consumers can switch from the default
+// pill (200px) to a more conventional rounded rectangle without forking
+// the basic-button mixin.
+$button-border-radius: 200px !default;
+$button-padding: 7px 16px 6px !default;
+
 // CSS custom properties — mirrors the Sass variables above.
 // These can be overridden at runtime with plain CSS:
 //   :root { --color-primary: #your-color; }
@@ -117,4 +123,8 @@ $blank-slate-border: 1px dashed #DADADA !default;
   --section-padding: #{$section-padding};
   --text-input-horizontal-padding: #{$text-input-horizontal-padding};
   --text-input-total-padding: #{$text-input-total-padding};
+
+  // Buttons
+  --button-border-radius: #{$button-border-radius};
+  --button-padding: #{$button-padding};
 }
