@@ -91,6 +91,25 @@ $button-light-background-image-active:    linear-gradient(180deg, #F3F3F3, #D8D8
 $button-light-border-color-active:        #c2c2c2 #b9b9b9 #b7b7b7 #b9b9b9 !default;
 $button-light-shadow-active:              0 1px 2px rgba(0, 0, 0, 0.22) inset, 0 1px 0 0px #EEE !default;
 
+// Flash messages — three states (warning is the default, notice is success,
+// error is danger). Each has a 2-stop gradient surface, a bottom border,
+// and a foreground color. Expose all three so consumers can re-skin to
+// flat solid backgrounds (set start = end) or different palettes.
+$flash-warning-background-start:          #f7f1d3 !default;
+$flash-warning-background-end:            #f5edc5 !default;
+$flash-warning-border-color:              #eee098 !default;
+$flash-warning-color:                     #cb9810 !default;
+
+$flash-notice-background-start:           #dce9dd !default;
+$flash-notice-background-end:             #ccdfcd !default;
+$flash-notice-border-color:               #adcbaf !default;
+$flash-notice-color:                      #416347 !default;
+
+$flash-error-background-start:            #f5e4e4 !default;
+$flash-error-background-end:              #f1dcdc !default;
+$flash-error-border-color:                #e0c2c0 !default;
+$flash-error-color:                       #b33c33 !default;
+
 // CSS custom properties — mirrors the Sass variables above.
 // These can be overridden at runtime with plain CSS:
 //   :root { --color-primary: #your-color; }
@@ -192,4 +211,18 @@ $button-light-shadow-active:              0 1px 2px rgba(0, 0, 0, 0.22) inset, 0
   --button-light-background-image-active:    #{$button-light-background-image-active};
   --button-light-border-color-active:        #{$button-light-border-color-active};
   --button-light-shadow-active:              #{$button-light-shadow-active};
+
+  // Flash messages
+  --flash-warning-background-start:          #{$flash-warning-background-start};
+  --flash-warning-background-end:            #{$flash-warning-background-end};
+  --flash-warning-border-color:              #{$flash-warning-border-color};
+  --flash-warning-color:                     #{$flash-warning-color};
+  --flash-notice-background-start:           #{$flash-notice-background-start};
+  --flash-notice-background-end:             #{$flash-notice-background-end};
+  --flash-notice-border-color:               #{$flash-notice-border-color};
+  --flash-notice-color:                      #{$flash-notice-color};
+  --flash-error-background-start:            #{$flash-error-background-start};
+  --flash-error-background-end:              #{$flash-error-background-end};
+  --flash-error-border-color:                #{$flash-error-border-color};
+  --flash-error-color:                       #{$flash-error-color};
 }

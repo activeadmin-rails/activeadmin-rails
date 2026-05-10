@@ -2,10 +2,13 @@
 
 body.logged_in {
   .flash {
-    @include gradient(#f7f1d3, #f5edc5);
-    text-shadow: 0 1px 0 #fafafa;
-    border-bottom: 1px solid #eee098;
-    color: #cb9810;
+    @include gradient(
+      var(--flash-warning-background-start, #{$flash-warning-background-start}),
+      var(--flash-warning-background-end, #{$flash-warning-background-end})
+    );
+    text-shadow: var(--text-shadow-light, 0 1px 0 #fafafa);
+    border-bottom: 1px solid var(--flash-warning-border-color, #{$flash-warning-border-color});
+    color: var(--flash-warning-color, #{$flash-warning-color});
     font-weight: bold;
     font-size: 1.1em;
     line-height: 1.0em;
@@ -13,14 +16,20 @@ body.logged_in {
     position: relative;
 
     &.flash_notice {
-      @include gradient(#dce9dd, #ccdfcd);
-      border-bottom: 1px solid #adcbaf;
-      color: #416347;
+      @include gradient(
+        var(--flash-notice-background-start, #{$flash-notice-background-start}),
+        var(--flash-notice-background-end, #{$flash-notice-background-end})
+      );
+      border-bottom: 1px solid var(--flash-notice-border-color, #{$flash-notice-border-color});
+      color: var(--flash-notice-color, #{$flash-notice-color});
     }
     &.flash_error {
-      @include gradient(#f5e4e4, #f1dcdc);
-      border-bottom: 1px solid #e0c2c0;
-      color: #b33c33;
+      @include gradient(
+        var(--flash-error-background-start, #{$flash-error-background-start}),
+        var(--flash-error-background-end, #{$flash-error-background-end})
+      );
+      border-bottom: 1px solid var(--flash-error-border-color, #{$flash-error-border-color});
+      color: var(--flash-error-color, #{$flash-error-color});
     }
   }
 }
