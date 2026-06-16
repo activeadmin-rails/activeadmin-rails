@@ -23,6 +23,12 @@ $text-shadow-light: 0 1px 0 rgba(255, 255, 255, 0.9) !default;
 $text-shadow-dark: 0 1px 0 rgba(0, 0, 0, 0.6) !default;
 
 $font-family-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$font-family-mono: 'andale mono', 'lucida console', monospace !default;
+
+// Body font-size is a percentage of the user agent default (typically 16px),
+// so the document scales with the browser's accessibility setting.
+$font-size-base: 72% !default;
+$line-height-base: 1.5 !default;
 
 $error-color: #932419 !default;
 $blank-slate-primary-color: #AAA !default;
@@ -43,3 +49,180 @@ $text-input-horizontal-padding: 10px !default;
 $text-input-total-padding: $text-input-horizontal-padding * 2 + $border-width * 2;
 
 $blank-slate-border: 1px dashed #DADADA !default;
+
+// Button shape — separated so consumers can switch from the default
+// pill (200px) to a more conventional rounded rectangle without forking
+// the basic-button mixin.
+$button-border-radius: 200px !default;
+$button-padding: 7px 16px 6px !default;
+
+// Default-button skin (used by .button, input[type=submit], modal OK,
+// pagination current page, action items rendered via dark-button).
+// Each surface property is a separate Sass variable so consumers can
+// switch from AA's gradient depth-effect look to a flat Primer-style
+// button by overriding individual tokens (e.g. drop the gradient with
+// `--button-default-background-image: none`).
+$button-default-background:               color.adjust($primary-color, $lightness: 15%) !default;
+$button-default-background-image:         linear-gradient(180deg, color.adjust($primary-color, $lightness: 15%), color.adjust($primary-color, $lightness: -12%)) !default;
+$button-default-color:                    #efefef !default;
+$button-default-border:                   solid 1px #484e53 !default;
+$button-default-border-color:             #616a71 #484e53 #363b3f #484e53 !default;
+$button-default-shadow:                   0 1px 1px rgba(0, 0, 0, 0.10), 0 1px 0 0px rgba(255, 255, 255, 0.2) inset !default;
+$button-default-background-hover:         color.adjust($primary-color, $lightness: 18%) !default;
+$button-default-background-image-hover:   linear-gradient(180deg, color.adjust($primary-color, $lightness: 18%), color.adjust($primary-color, $lightness: -9%)) !default;
+$button-default-background-active:        color.adjust($primary-color, $lightness: 8%) !default;
+$button-default-background-image-active:  linear-gradient(180deg, color.adjust($primary-color, $lightness: 8%), color.adjust($primary-color, $lightness: -17%)) !default;
+$button-default-shadow-active:            0 1px 3px rgba(0, 0, 0, 0.40) inset, 0 1px 0 0px #FFF !default;
+
+// Light-button skin (used by .button.cancel, modal Cancel, sidebar
+// dropdowns, pagination prev/next, tabs, table tools, .clear_filters_btn,
+// span.action_item via SBSC convention). Same surface shape as
+// default-button so consumers can re-skin both buttons coherently.
+$button-light-background:                 #FFFFFF !default;
+$button-light-background-image:           linear-gradient(180deg, #FFFFFF, #E7E7E7) !default;
+$button-light-color:                      var(--color-primary, #{$primary-color}) !default;
+$button-light-border:                     solid 1px #c7c7c7 !default;
+$button-light-border-color:               #d3d3d3 #c7c7c7 #c2c2c2 #c7c7c7 !default;
+$button-light-shadow:                     0 1px 1px rgba(0, 0, 0, 0.10), 0 1px 0 0 rgba(255, 255, 255, 0.8) inset !default;
+$button-light-background-hover:           #FFFFFF !default;
+$button-light-background-image-hover:     linear-gradient(180deg, #FFFFFF, #F1F1F1) !default;
+$button-light-background-active:          #F3F3F3 !default;
+$button-light-background-image-active:    linear-gradient(180deg, #F3F3F3, #D8D8D8) !default;
+$button-light-border-color-active:        #c2c2c2 #b9b9b9 #b7b7b7 #b9b9b9 !default;
+$button-light-shadow-active:              0 1px 2px rgba(0, 0, 0, 0.22) inset, 0 1px 0 0px #EEE !default;
+
+// Flash messages — three states (warning is the default, notice is success,
+// error is danger). Each has a 2-stop gradient surface, a bottom border,
+// and a foreground color. Expose all three so consumers can re-skin to
+// flat solid backgrounds (set start = end) or different palettes.
+$flash-warning-background-start:          #f7f1d3 !default;
+$flash-warning-background-end:            #f5edc5 !default;
+$flash-warning-border-color:              #eee098 !default;
+$flash-warning-color:                     #cb9810 !default;
+
+$flash-notice-background-start:           #dce9dd !default;
+$flash-notice-background-end:             #ccdfcd !default;
+$flash-notice-border-color:               #adcbaf !default;
+$flash-notice-color:                      #416347 !default;
+
+$flash-error-background-start:            #f5e4e4 !default;
+$flash-error-background-end:              #f1dcdc !default;
+$flash-error-border-color:                #e0c2c0 !default;
+$flash-error-color:                       #b33c33 !default;
+
+// CSS custom properties — mirrors the Sass variables above.
+// These can be overridden at runtime with plain CSS:
+//   :root { --color-primary: #your-color; }
+// Sass variable overrides still work and will flow through to these properties.
+:root {
+  // Colors — expressed in oklch for perceptually-uniform interpolation and
+  // easier lightness adjustments. Computed from the default Sass values:
+  //   oklch(L% C H) — L: lightness 0-100, C: chroma, H: hue in degrees
+  // Achromatic colors (greys) use `none` for hue per the CSS spec.
+  --color-body-background: oklch(100% 0 none);           // #FFF
+  --color-primary: oklch(49.97% 0.0109 243);             // #5E6469
+  --color-secondary: oklch(95.51% 0 none);               // #f0f0f0
+  --color-text: oklch(32.68% 0.0055 236.7);              // #323537
+  --color-link: oklch(49.64% 0.0775 243.4);              // #38678b
+  --color-section-header-text: oklch(49.97% 0.0109 243); // = primary
+  --color-current-menu-item-background: oklch(60.53% 0.0132 240); // primary +12% l
+  --color-hover-menu-item-background: oklch(60.53% 0.0132 240);   // = current
+  --color-table-stripe: oklch(96.94% 0.0011 197.1);      // primary +57% l
+  --color-table-selected: oklch(91.29% 0.0161 239.1);    // #d9e4ec
+  --color-error: oklch(43.98% 0.1486 29.8);              // #932419
+  --color-blank-slate-primary: oklch(73.8% 0 none);      // #AAA
+  --color-breadcrumbs: oklch(66.17% 0.0188 248.1);       // #8a949e
+  --color-breadcrumbs-separator: oklch(75.97% 0.0146 248); // #aab2ba
+  --color-required-field-marker: oklch(73.8% 0 none);    // #aaa
+  --color-form-label: oklch(49.97% 0.0109 243);          // = primary
+  --color-page-header-text: oklch(84.83% 0 none);        // #cdcdcd
+
+  // Header surfaces
+  --color-header-background-start: oklch(54.62% 0.0119 241.2); // primary +5% l
+  --color-header-background-end: oklch(42.52% 0.0093 244.6);   // primary -7% l
+  --color-header-border-bottom: oklch(38.37% 0.0084 245.1);    // primary -11% l
+
+  // Section / panel surfaces
+  --color-secondary-gradient-start: oklch(95.21% 0 none);     // #efefef
+  --color-secondary-gradient-stop: oklch(90.85% 0.0026 228.8); // #dfe1e2
+  --color-section-background: oklch(96.72% 0 none);           // #f4f4f4
+  --color-section-header-border-top: oklch(92.49% 0 none);    // #e6e6e6
+  --color-section-header-border-right: oklch(86.99% 0 none);  // #d4d4d4
+  --color-section-header-border-bottom: oklch(84.83% 0 none); // #cdcdcd
+  --color-section-header-border-left: oklch(86.99% 0 none);   // #d4d4d4
+  --color-section-divider: oklch(93.1% 0 none);               // #E8E8E8
+  --shadow-section-header: 0 1px 3px rgba(0,0,0,0.12), 0 0 1px #FFF inset;
+
+  // Shadows
+  --shadow-sm: #{$shadow-sm};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+  --shadow-inset: #{$shadow-inset};
+  --shadow-none: #{$shadow-none};
+  --text-shadow-light: #{$text-shadow-light};
+  --text-shadow-dark: #{$text-shadow-dark};
+
+  // Typography
+  --font-family-sans: #{$font-family-sans};
+  --font-family-mono: #{$font-family-mono};
+  --font-size-base: #{$font-size-base};
+  --line-height-base: #{$line-height-base};
+
+  // Sizes
+  --border-width: #{$border-width};
+  --horizontal-page-margin: #{$horizontal-page-margin};
+  --sidebar-width: #{$sidebar-width};
+  --cell-padding: #{$cell-padding};
+  --cell-horizontal-padding: #{$cell-horizontal-padding};
+  --section-padding: #{$section-padding};
+  --text-input-horizontal-padding: #{$text-input-horizontal-padding};
+  --text-input-total-padding: #{$text-input-total-padding};
+
+  // Buttons
+  --button-border-radius: #{$button-border-radius};
+  --button-padding: #{$button-padding};
+
+  // Default-button skin (gradient, border, text, shadow). All surfaces
+  // exposed so consumers can re-skin the button entirely (e.g. flat
+  // Primer-style) without forking mixins/_buttons.scss.
+  --button-default-background:               #{$button-default-background};
+  --button-default-background-image:         #{$button-default-background-image};
+  --button-default-color:                    #{$button-default-color};
+  --button-default-border:                   #{$button-default-border};
+  --button-default-border-color:             #{$button-default-border-color};
+  --button-default-shadow:                   #{$button-default-shadow};
+  --button-default-background-hover:         #{$button-default-background-hover};
+  --button-default-background-image-hover:   #{$button-default-background-image-hover};
+  --button-default-background-active:        #{$button-default-background-active};
+  --button-default-background-image-active:  #{$button-default-background-image-active};
+  --button-default-shadow-active:            #{$button-default-shadow-active};
+
+  // Light-button skin (flat white-ish, used by Cancel buttons, sidebar
+  // dropdowns, pagination prev/next, tabs, table tools).
+  --button-light-background:                 #{$button-light-background};
+  --button-light-background-image:           #{$button-light-background-image};
+  --button-light-color:                      #{$button-light-color};
+  --button-light-border:                     #{$button-light-border};
+  --button-light-border-color:               #{$button-light-border-color};
+  --button-light-shadow:                     #{$button-light-shadow};
+  --button-light-background-hover:           #{$button-light-background-hover};
+  --button-light-background-image-hover:     #{$button-light-background-image-hover};
+  --button-light-background-active:          #{$button-light-background-active};
+  --button-light-background-image-active:    #{$button-light-background-image-active};
+  --button-light-border-color-active:        #{$button-light-border-color-active};
+  --button-light-shadow-active:              #{$button-light-shadow-active};
+
+  // Flash messages
+  --flash-warning-background-start:          #{$flash-warning-background-start};
+  --flash-warning-background-end:            #{$flash-warning-background-end};
+  --flash-warning-border-color:              #{$flash-warning-border-color};
+  --flash-warning-color:                     #{$flash-warning-color};
+  --flash-notice-background-start:           #{$flash-notice-background-start};
+  --flash-notice-background-end:             #{$flash-notice-background-end};
+  --flash-notice-border-color:               #{$flash-notice-border-color};
+  --flash-notice-color:                      #{$flash-notice-color};
+  --flash-error-background-start:            #{$flash-error-background-start};
+  --flash-error-background-end:              #{$flash-error-background-end};
+  --flash-error-border-color:                #{$flash-error-border-color};
+  --flash-error-color:                       #{$flash-error-color};
+}

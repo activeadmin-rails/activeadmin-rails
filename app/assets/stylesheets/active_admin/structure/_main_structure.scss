@@ -10,7 +10,7 @@
 
 #active_admin_content {
   margin: 0;
-  padding: $horizontal-page-margin;
+  padding: var(--horizontal-page-margin, #{$horizontal-page-margin});
 
   #main_content_wrapper {
     float: left;
@@ -25,7 +25,7 @@
 
   #sidebar {
     float: left;
-    width: $sidebar-width;
-    margin-left: -$sidebar-width;
+    width: var(--sidebar-width, #{$sidebar-width});
+    margin-left: calc(-1 * var(--sidebar-width, #{$sidebar-width}));
   }
 }

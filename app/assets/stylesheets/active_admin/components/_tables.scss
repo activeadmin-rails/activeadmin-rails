@@ -24,11 +24,11 @@ table.index_table {
   th {
     @include section-header;
     border-right: none;
-    padding-left: $cell-horizontal-padding;
-    padding-right: $cell-horizontal-padding;
+    padding-left: var(--cell-horizontal-padding, #{$cell-horizontal-padding});
+    padding-right: var(--cell-horizontal-padding, #{$cell-horizontal-padding});
 
     a, a:link, a:visited {
-      color: $section-header-text-color;
+      color: var(--color-section-header-text, #{$section-header-text-color});
       text-decoration: none;
       display: block;
       white-space: nowrap;
@@ -51,14 +51,14 @@ table.index_table {
 
   }
 
-  tr.even td { background: $table-stripe-color; }
+  tr.even td { background: var(--color-table-stripe, #{$table-stripe-color}); }
 
   tr.selected td {
-    background: $table-selected-color;
+    background: var(--color-table-selected, #{$table-selected-color});
   }
 
   td {
-    padding: 10px $cell-horizontal-padding 8px $cell-horizontal-padding;
+    padding: 10px var(--cell-horizontal-padding, #{$cell-horizontal-padding}) 8px var(--cell-horizontal-padding, #{$cell-horizontal-padding});
     border-bottom: 1px solid #e8e8e8;
     vertical-align: top;
   }
@@ -71,36 +71,36 @@ table.index_table {
   th {
     padding-top: 10px;
     background: none;
-    color: $primary-color;
-    box-shadow: $shadow-none;
-    text-shadow: $text-shadow-light;
+    color: var(--color-primary, #{$primary-color});
+    box-shadow: var(--shadow-none, #{$shadow-none});
+    text-shadow: var(--text-shadow-light, #{$text-shadow-light});
     text-transform: uppercase;
     border-bottom: 1px solid #ccc;
   }
   tr.odd td { background: color.adjust($table-stripe-color, $lightness: -3%); }
-  tr.even td { background: $table-stripe-color; }
+  tr.even td { background: var(--color-table-stripe, #{$table-stripe-color}); }
 }
 
 // -------------------------------------- Resource Attributes Table
 .attributes_table { overflow: hidden; }
 
 .attributes_table table {
-  col.even { background: $table-stripe-color; }
+  col.even { background: var(--color-table-stripe, #{$table-stripe-color}); }
   col.odd  { background: color.adjust($table-stripe-color, $lightness: -3%); }
   th, td {
-    padding: 8px $cell-horizontal-padding 6px $cell-horizontal-padding;
+    padding: 8px var(--cell-horizontal-padding, #{$cell-horizontal-padding}) 6px var(--cell-horizontal-padding, #{$cell-horizontal-padding});
     vertical-align: top;
     border-bottom: 1px solid #e8e8e8;
   }
   th {
-    box-shadow: $shadow-none;
+    box-shadow: var(--shadow-none, #{$shadow-none});
     @include no-gradient;
     width: 150px;
     font-size: 0.9em;
     padding-left: 0;
     text-transform: uppercase;
-    color: $primary-color;
-    text-shadow: $text-shadow-light;
+    color: var(--color-primary, #{$primary-color});
+    text-shadow: var(--text-shadow-light, #{$text-shadow-light});
   }
   td {
     .empty {

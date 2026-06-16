@@ -4,8 +4,8 @@
 // ----------------------------------- Header
 #header {
   @include primary-gradient;
-  box-shadow: $shadow-md;
-  text-shadow: $text-shadow-dark;
+  box-shadow: var(--shadow-md, #{$shadow-md});
+  text-shadow: var(--text-shadow-dark, #{$text-shadow-dark});
   display: flex;
   align-items: center;
   min-height: 20px;
@@ -18,11 +18,11 @@
   h1 {
     flex-shrink: 0;
     white-space: nowrap;
-    color:  $page-header-text-color;
+    color: var(--color-page-header-text, #{$page-header-text-color});
     margin-right: 20px;
     margin-top: 0;
     margin-bottom: 0;
-    padding: 1.5px $horizontal-page-margin 1.5px $horizontal-page-margin;
+    padding: 1.5px var(--horizontal-page-margin, #{$horizontal-page-margin}) 1.5px var(--horizontal-page-margin, #{$horizontal-page-margin});
     font-size: 1.3em;
     font-weight: normal;
     line-height: 1.2;
@@ -41,7 +41,7 @@
     }
   }
 
-  a, a:link { color: $page-header-text-color; }
+  a, a:link { color: var(--color-page-header-text, #{$page-header-text-color}); }
 
   .header-item {
     top: 2px;
@@ -72,7 +72,7 @@
       }
 
       &.current > a {
-        background: $current-menu-item-background;
+        background: var(--color-current-menu-item-background, #{$current-menu-item-background});
         color: #fff;
       }
 
@@ -82,19 +82,19 @@
       }
 
       &.has_nested.current > a {
-        background: $current-menu-item-background image-url('active_admin/nested_menu_arrow_dark.gif') no-repeat calc(100% - 7px) 50%;
+        background: var(--color-current-menu-item-background, #{$current-menu-item-background}) image-url('active_admin/nested_menu_arrow_dark.gif') no-repeat calc(100% - 7px) 50%;
         padding-right: 20px;
       }
 
       &:hover > a {
-        background: $hover-menu-item-background;
+        background: var(--color-hover-menu-item-background, #{$hover-menu-item-background});
         color: #fff;
       }
 
       &.has_nested:hover > a {
         border-radius: 10px 10px 0 0;
-        border-bottom: 5px solid $hover-menu-item-background;
-        background: $hover-menu-item-background image-url('active_admin/nested_menu_arrow_dark.gif') no-repeat calc(100% - 7px) 50%;
+        border-bottom: 5px solid var(--color-hover-menu-item-background, #{$hover-menu-item-background});
+        background: var(--color-hover-menu-item-background, #{$hover-menu-item-background}) image-url('active_admin/nested_menu_arrow_dark.gif') no-repeat calc(100% - 7px) 50%;
         z-index: 1020;
       }
 
@@ -103,7 +103,7 @@
       &:hover ul { display: block;}
       /* Drop down menus */
       ul {
-        background: $hover-menu-item-background;
+        background: var(--color-hover-menu-item-background, #{$hover-menu-item-background});
         border-radius: 0 10px 10px 10px;
         box-shadow: 0 1px 3px #444;
         position: absolute;

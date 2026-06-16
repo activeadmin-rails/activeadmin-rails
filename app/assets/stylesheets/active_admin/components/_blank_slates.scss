@@ -7,7 +7,7 @@
   .blank_slate {
     border-radius: 3px;
     border:  $blank-slate-border;
-    color: $blank-slate-primary-color;
+    color: var(--color-blank-slate-primary, #{$blank-slate-primary-color});
     display: inline-block;
     font-size: 1.2em;
     font-weight: bold;

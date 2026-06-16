@@ -41,7 +41,7 @@
     }
 
     .ui-datepicker-title {
-      text-shadow: $text-shadow-dark;
+      text-shadow: var(--text-shadow-dark, #{$text-shadow-dark});
       color: #fff;
       display: block;
       font-size: 1.1em;
@@ -92,7 +92,7 @@
 
   table.ui-datepicker-calendar {
     border-radius: 0 0 3px 3px;
-    box-shadow: $shadow-lg;
+    box-shadow: var(--shadow-lg, #{$shadow-lg});
     background-color: #f4f4f4;
     border: solid 1px #63686e;
     left: 2px;

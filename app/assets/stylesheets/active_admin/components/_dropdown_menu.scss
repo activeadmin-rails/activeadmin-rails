@@ -87,7 +87,7 @@
     background-color: white;
     padding: 2px;
     box-shadow: rgba(0,0,0,0.4) 0 1px 3px, color.adjust($primary-color, $lightness: 15%) 0px 1px 0px 0px inset;
-    background-color: $primary-color;
+    background-color: var(--color-primary, #{$primary-color});
     @include gradient(color.adjust($primary-color, $lightness: 4%), color.adjust($primary-color, $lightness: -5%));
     border: solid 1px color.adjust($primary-color, $lightness: -10%);
     border-top-color: color.adjust($primary-color, $lightness: -4%);
