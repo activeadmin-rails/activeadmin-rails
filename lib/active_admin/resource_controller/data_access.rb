@@ -214,6 +214,8 @@ module ActiveAdmin
       # Applies any Ransack search methods to the currently scoped collection.
       # Both `search` and `ransack` are provided, but we use `ransack` to prevent conflicts.
       def apply_filtering(chain)
+        return chain unless chain.respond_to?(:ransack)
+
         @search = chain.ransack(params[:q] || {})
         @search.result
       end

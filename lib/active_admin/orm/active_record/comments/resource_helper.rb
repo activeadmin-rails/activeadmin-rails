@@ -9,7 +9,7 @@ module ActiveAdmin
       end
 
       def comments?
-        (namespace.comments? && comments != false) || comments == true
+        (namespace.comments? && comments != false && resource_class < ::ActiveRecord::Base) || comments == true
       end
     end
 
