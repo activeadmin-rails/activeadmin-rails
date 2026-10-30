@@ -30,3 +30,8 @@ end
 Then /^I should see (\d+) comments?$/ do |number|
   expect(page).to have_selector('div.active_admin_comment', count: number.to_i)
 end
+
+# Kaminari >= 1.3 separates the range with an en dash, older versions with a hyphen.
+Then /^I should see comments (\d+) to (\d+) of (\d+)$/ do |from, to, total|
+  expect(page).to have_content(/Displaying comments #{from}\s*[-–]\s*#{to} of #{total} in total/)
+end

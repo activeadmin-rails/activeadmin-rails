@@ -164,15 +164,15 @@ Feature: Commenting
         ActiveAdmin.register Post
       """
     Then I should see "Comments (70)"
-    And I should see "Displaying comments 1 - 25 of 70 in total"
+    And I should see comments 1 to 25 of 70
     And I should see 25 comments
     And I should see pagination with 3 pages
     And I should see the pagination "Next" link
     When I follow "2"
-    Then I should see "Displaying comments 26 - 50 of 70 in total"
+    Then I should see comments 26 to 50 of 70
     And I should see 25 comments
     And I should see the pagination "Next" link
     When I follow "Next"
     Then I should see 20 comments
-    And I should see "Displaying comments 51 - 70 of 70 in total"
+    And I should see comments 51 to 70 of 70
     And I should not see the pagination "Next" link
