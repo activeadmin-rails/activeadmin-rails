@@ -147,6 +147,10 @@ create_file 'app/models/store.rb', <<-RUBY.strip_heredoc, force: true
     def self.ransackable_attributes(auth_object = nil)
       ["created_at", "id", "name", "updated_at", "user_id"]
     end
+
+    def self.ransackable_associations(auth_object = nil)
+      []
+    end
   end
 RUBY
 
@@ -215,6 +219,10 @@ inject_into_file 'app/models/admin_user.rb', '
       ["created_at", "email", "id", 
        "remember_created_at", "reset_password_sent_at",
        "updated_at"]
+    end
+
+    def self.ransackable_associations(auth_object = nil)
+      []
     end
 ', after: 'class AdminUser < ApplicationRecord'
 
