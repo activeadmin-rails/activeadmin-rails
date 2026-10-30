@@ -27,6 +27,10 @@ module ActiveAdmin
        ["author_id", "author_type", "body", "created_at", "id", "namespace", "resource_id", "resource_type", "updated_at"]
      end
 
+    def self.ransackable_associations(auth_object = nil)
+      ["author", "resource"]
+    end
+
     def set_resource_type
       self.resource_type = self.class.resource_type(resource)
     end
