@@ -19,7 +19,7 @@ RSpec.describe ActiveAdmin::Filters::ActiveFilter do
   end
 
   let(:condition) do
-    search.conditions[0]
+    search.base.conditions[0]
   end
 
   subject do
@@ -68,7 +68,7 @@ RSpec.describe ActiveAdmin::Filters::ActiveFilter do
 
     context 'id filter' do
       let(:condition) do
-        search.conditions[0]
+        search.base.conditions[0]
       end
       it 'should have valid values' do
         expect(subject.values[0]).to eq(post.id)
@@ -81,7 +81,7 @@ RSpec.describe ActiveAdmin::Filters::ActiveFilter do
 
     context 'type filter' do
       let(:condition) do
-        search.conditions[1]
+        search.base.conditions[1]
       end
 
       it 'should have valid values' do
