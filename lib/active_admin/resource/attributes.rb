@@ -4,6 +4,8 @@ module ActiveAdmin
     module Attributes
 
       def default_attributes
+        return {} unless resource_class.respond_to?(:columns)
+
         resource_class.columns.sort_by(&:name).each_with_object({}) do |c, attrs|
           unless reject_col?(c)
             name = c.name.to_sym

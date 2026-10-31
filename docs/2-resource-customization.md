@@ -395,6 +395,34 @@ class Admin::PostsController < ActiveAdmin::ResourceController
 end
 ```
 
+## Non-ActiveRecord resources
+
+A resource can wrap any class that includes `ActiveModel::Model`, for example
+jobs read from a queue backend. Override `scoped_collection` to return a
+paginatable collection and `find_resource` to load a single record:
+
+```ruby
+class Admin::JobsController < ActiveAdmin::ResourceController
+  actions :index, :show
+
+  protected
+
+  def scoped_collection
+    Kaminari.paginate_array(Job.all)
+  end
+
+  def find_resource
+    Job.find_by(id: params[:id])
+  end
+end
+```
+
+Without ActiveRecord there are no default columns, filters or comments, and
+Ransack filtering and SQL sorting are skipped. Declare index columns explicitly
+(they are not sortable unless given `sortable:`), and override `apply_filtering`
+and `apply_sorting` to implement your own. Breadcrumbs call
+`find_by(id => ...)` on the class when it responds to it.
+
 ## Belongs To
 
 It's common to want to scope a series of resources to a relationship. For

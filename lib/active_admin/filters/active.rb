@@ -14,7 +14,7 @@ module ActiveAdmin
       # @see ActiveAdmin::ResourceController::DataAcces#apply_filtering
       def initialize(resource, search)
         @resource = resource
-        @filters = build_filters(search.base.conditions)
+        @filters = search ? build_filters(search.base.conditions) : []
       end
 
       private

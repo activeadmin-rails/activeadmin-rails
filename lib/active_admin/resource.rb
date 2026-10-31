@@ -177,7 +177,10 @@ module ActiveAdmin
     end
 
     def find_resource(id)
-      resource = resource_class.public_send *method_for_find(id)
+      method, *args = method_for_find(id)
+      return unless resource_class.respond_to?(method)
+
+      resource = resource_class.public_send method, *args
       (decorator_class && resource) ? decorator_class.new(resource) : resource
     end
 
@@ -203,7 +206,8 @@ module ActiveAdmin
       if finder = resources_configuration[:self][:finder]
         [finder, id]
       else
-        [:find_by, { resource_class.primary_key => id }]
+        primary_key = resource_class.respond_to?(:primary_key) ? resource_class.primary_key : :id
+        [:find_by, { primary_key => id }]
       end
     end
 
