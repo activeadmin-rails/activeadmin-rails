@@ -6,9 +6,9 @@ module ActiveAdmin
       def collection_size(c = collection)
         return c.count if c.is_a?(Array)
 
-        c = c.except :select, :order
+        c = c.except :select, :order if c.respond_to?(:except)
 
-        c.group_values.present? ? c.count.count : c.count
+        c.respond_to?(:group_values) && c.group_values.present? ? c.count.count : c.count
       end
 
       def collection_is_empty?(c = collection)

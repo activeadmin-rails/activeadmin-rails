@@ -15,8 +15,10 @@ module ActiveAdmin
       @field.present? && @order.present?
     end
 
+    # Collections that are not SQL backed (e.g. a PORO query object) are
+    # returned unchanged; they should provide a custom order_clause instead.
     def apply(chain)
-      chain.reorder(Arel.sql sql)
+      chain.respond_to?(:reorder) ? chain.reorder(Arel.sql sql) : chain
     end
 
     def to_sql
